@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kariernay-kalibrovka.ru/sitemap.xml
