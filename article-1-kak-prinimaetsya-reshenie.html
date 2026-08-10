@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Как принимается решение о найме - Карьерная калибровка</title>
+<meta name="description" content="15+ лет в подборе персонала изнутри: что рекрутер видит за 10-15 секунд на резюме - и что решает уже после, вне контроля кандидата.">
+<meta property="og:title" content="Как принимается решение о найме">
+<meta property="og:description" content="Взгляд нанимающего менеджера: резюме, тишина после отказа, зарплатные переговоры - что решает на самом деле.">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://kariernay-kalibrovka.ru/article-1-kak-prinimaetsya-reshenie.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Как принимается решение о найме",
+  "description": "15+ лет в подборе персонала изнутри: что рекрутер видит за 10-15 секунд на резюме - и что решает уже после, вне контроля кандидата.",
+  "inLanguage": "ru",
+  "datePublished": "2026-08-07",
+  "dateModified": "2026-08-07",
+  "author": {
+    "@type": "Person",
+    "name": "Вероника Малых",
+    "jobTitle": "Карьерный консультант"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Вероника Малых"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kariernay-kalibrovka.ru/article-1-kak-prinimaetsya-reshenie.html"
+  }
+}
+</script>
+<style>
+:root{
+  --mint:#6BF0C8;
+  --teal:#0E9D78;
+  --ink:#14171A;
+  --ink-soft:#1D2126;
+  --paper:#EEF2F0;
+  --paper-soft:#E4E9E6;
+  --clay:#E4574C;
+  --line:rgba(20,23,26,0.14);
+  --line-on-dark:rgba(238,242,240,0.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Charter,"Iowan Old Style",Georgia,"Times New Roman",serif;
+  font-size:18px;
+  line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.display{
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight:800;
+  letter-spacing:-0.02em;
+}
+.eyebrow{
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight:700;
+  font-size:12.5px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.hero{
+  position:relative;
+  padding:120px 24px 96px;
+  background:var(--ink);
+  color:var(--paper);
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(680px 420px at 82% -10%, rgba(107,240,200,0.32), transparent 62%),
+    radial-gradient(520px 360px at 8% 110%, rgba(14,157,120,0.26), transparent 62%);
+  pointer-events:none;
+  animation:glowDrift 14s ease-in-out infinite;
+}
+.dark-ground::before, footer::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(560px 380px at 88% 6%, rgba(107,240,200,0.22), transparent 62%),
+    radial-gradient(480px 340px at 6% 94%, rgba(14,157,120,0.20), transparent 62%);
+  pointer-events:none;
+  z-index:0;
+  animation:glowDrift 14s ease-in-out infinite reverse;
+}
+@keyframes glowDrift{
+  0%,100%{ opacity:1; transform:translateY(0); }
+  50%{ opacity:.72; transform:translateY(14px); }
+}
+@media (prefers-reduced-motion:reduce){
+  .hero::before, .dark-ground::before, footer::before{ animation:none !important; }
+}
+.hero-inner{ max-width:680px; margin:0 auto; position:relative; z-index:1; }
+.hero .eyebrow{ color:var(--mint); margin-bottom:18px; opacity:0; animation:rise .7s .1s ease forwards; }
+.hero h1{
+  font-size:clamp(34px,5.4vw,54px);
+  line-height:1.1;
+  margin-bottom:22px;
+  text-wrap:balance;
+  opacity:0; animation:rise .8s .22s ease forwards;
+}
+.hero .lead{
+  font-size:19px;
+  line-height:1.6;
+  color:rgba(238,242,240,0.82);
+  max-width:56ch;
+  margin-bottom:28px;
+  opacity:0; animation:rise .8s .36s ease forwards;
+}
+.hero .meta{
+  display:flex; gap:14px; align-items:center;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:13.5px; color:rgba(238,242,240,0.6);
+  opacity:0; animation:rise .8s .48s ease forwards;
+}
+.hero .meta .dot{ width:5px; height:5px; border-radius:50%; background:var(--mint); }
+@keyframes rise{ from{opacity:0; transform:translateY(16px)} to{opacity:1; transform:translateY(0)} }
+
+/* grain texture - dark grounds */
+.grain{ position:relative; }
+.grain::after{
+  content:"";
+  position:absolute; inset:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity:.045;
+  mix-blend-mode:overlay;
+  pointer-events:none;
+}
+
+/* gauge - hero instrument, 10-15 sec */
+.gauge-wrap{
+  display:flex; flex-direction:column; align-items:center;
+  margin:0 0 34px;
+  opacity:0; animation:rise .9s .05s ease forwards;
+}
+.gauge{ width:200px; height:auto; overflow:visible; }
+.gauge-track{ fill:none; stroke:rgba(238,242,240,0.16); stroke-width:6; stroke-linecap:round; }
+.tick{ stroke:rgba(238,242,240,0.4); stroke-width:2; }
+.tick-hi{ stroke:var(--mint); stroke-width:2.5; }
+.gauge-fill{
+  fill:none; stroke:var(--mint); stroke-width:6; stroke-linecap:round;
+  stroke-dasharray:50; stroke-dashoffset:50;
+  animation:gaugeDraw 1.1s .7s cubic-bezier(.4,0,.2,1) forwards;
+  filter:drop-shadow(0 0 4px rgba(107,240,200,0.45));
+}
+.gauge-dot{ opacity:0; transform-box:fill-box; transform-origin:center; animation:gaugeDot .5s 1.75s ease forwards; }
+@keyframes gaugeDraw{ to{ stroke-dashoffset:0; } }
+@keyframes gaugeDot{ from{ opacity:0; transform:scale(.3); } to{ opacity:1; transform:scale(1); } }
+.gauge-label{ text-align:center; margin-top:-8px; }
+.gauge-num{ display:block; font-size:38px; color:var(--mint); line-height:1; }
+.gauge-sub{ display:block; font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; font-size:12px; color:rgba(238,242,240,0.55); margin-top:7px; letter-spacing:.03em; }
+
+/* calibration line inline (once, under hero) */
+.scale{
+  max-width:680px; margin:0 auto; padding:0 24px;
+  display:flex; align-items:center; gap:2px;
+  height:34px;
+  transform:translateY(-17px);
+  position:relative; z-index:2;
+}
+.scale i{ display:block; width:1px; height:9px; background:rgba(107,240,200,0.5); }
+.scale i:nth-child(5n){ height:15px; background:var(--mint); }
+.scale span.pt{
+  width:9px; height:9px; border-radius:50%; background:var(--mint);
+  box-shadow:0 0 10px rgba(107,240,200,0.7);
+  margin-left:8px;
+}
+
+main{ max-width:680px; margin:0 auto; padding:64px 24px 0; }
+.reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.in{ opacity:1; transform:translateY(0); }
+
+section.block{ padding:6px 0 58px; }
+h2{
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight:700;
+  font-size:24px;
+  letter-spacing:-0.01em;
+  margin:0 0 18px;
+  text-wrap:balance;
+}
+p{ margin-bottom:16px; max-width:64ch; }
+p:last-child{ margin-bottom:0; }
+
+/* pivot divider - split inside/outside motif */
+.pivot{
+  margin:8px 0 40px;
+  border-radius:20px;
+  padding:34px 30px;
+  background:linear-gradient(120deg, var(--paper-soft) 0 50%, var(--ink) 50% 100%);
+  display:grid; grid-template-columns:1fr 1fr; gap:24px;
+  position:relative;
+}
+.pivot::after{
+  content:"";
+  position:absolute; left:50%; top:14px; bottom:14px; width:1px;
+  background:linear-gradient(var(--mint), transparent);
+}
+.pivot .side{ font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; font-size:13px; letter-spacing:.04em; }
+.pivot .side b{ display:block; font-weight:800; font-size:15px; margin-bottom:6px; }
+.pivot .side.out{ color:var(--ink); }
+.pivot .side.in{ color:var(--paper); text-align:right; }
+.pivot .side.in b{ color:var(--mint); }
+@media (max-width:560px){ .pivot{grid-template-columns:1fr; background:linear-gradient(180deg, var(--paper-soft) 0 50%, var(--ink) 50% 100%);} .pivot::after{ left:14px; right:14px; top:50%; bottom:auto; height:1px; width:auto;} .pivot .side.in{text-align:left} }
+
+/* dark ground block (hidden/inside half) */
+.dark-ground{
+  background:var(--ink); color:var(--paper);
+  margin:0 -24px; padding:56px 24px;
+  border-radius:0;
+  position:relative;
+}
+.dark-ground > section{ position:relative; z-index:1; }
+.dark-ground h2{ color:var(--paper); }
+.dark-ground .stopper{ color:var(--mint); }
+
+/* stat card - digit anchor */
+.stat{
+  display:flex; align-items:baseline; gap:16px;
+  padding:20px 22px; margin:22px 0;
+  border-radius:14px;
+  background:rgba(107,240,200,0.07);
+  border:1px solid rgba(107,240,200,0.25);
+}
+.dark-ground .stat{ background:rgba(107,240,200,0.09); border-color:rgba(107,240,200,0.28); }
+.stat .num{
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight:800; font-size:34px; color:var(--mint);
+  line-height:1; white-space:nowrap;
+}
+.stat .txt{ font-size:15.5px; line-height:1.4; font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; }
+.stat .txt .src{ display:block; opacity:.6; font-size:12.5px; margin-top:3px; }
+
+blockquote{
+  border-left:2px solid var(--mint);
+  padding:6px 0 6px 26px;
+  font-style:italic;
+  font-size:23px;
+  line-height:1.44;
+  margin:36px 0;
+  color:inherit;
+  position:relative;
+}
+blockquote::before{
+  content:"\201C";
+  position:absolute; left:2px; top:-22px;
+  font-family:Charter,Georgia,serif;
+  font-style:normal;
+  font-size:60px;
+  line-height:1;
+  color:var(--mint);
+  opacity:.4;
+}
+
+/* checklist - calibration scale styled */
+.checklist{
+  list-style:none;
+  margin:8px 0 0;
+  padding:0;
+  border-radius:16px;
+  background:var(--paper-soft);
+  overflow:hidden;
+}
+.checklist li{
+  display:grid; grid-template-columns:28px 1fr; gap:14px;
+  padding:16px 20px;
+  font-size:16px; line-height:1.55;
+  border-top:1px solid var(--line);
+  transition:background .2s ease;
+}
+.checklist li:first-child{ border-top:none; }
+.checklist li:hover{ background:rgba(107,240,200,0.12); }
+.checklist li::before{
+  content:"";
+  width:10px; height:10px; border-radius:50%;
+  border:2px solid var(--teal);
+  margin-top:5px;
+  transition:background .2s ease, border-color .2s ease;
+}
+.checklist li:hover::before{ background:var(--mint); border-color:var(--mint); }
+
+footer{
+  margin:80px -24px 0; padding:48px 24px 64px;
+  background:var(--ink); color:rgba(238,242,240,0.72);
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:14px; line-height:1.7;
+  position:relative;
+}
+footer .fwrap{ max-width:680px; margin:0 auto; position:relative; z-index:1; }
+footer strong{ color:var(--paper) }
+footer a{ color:var(--mint); text-decoration:none }
+footer a:hover{ text-decoration:underline }
+footer .back{ display:inline-block; margin-top:18px; color:rgba(238,242,240,0.5); font-size:13px }
+.editorial-scene{
+  margin:6px 0 44px;
+  max-width:300px;
+  border-radius:18px;
+  padding:22px;
+  background:rgba(107,240,200,0.05);
+  box-shadow:inset 0 0 0 1px rgba(107,240,200,0.4);
+}
+.editorial-scene svg{ width:100%; height:auto; display:block; }
+.editorial-scene figcaption{
+  margin-top:14px;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:12px; letter-spacing:.03em;
+  color:rgba(20,23,26,0.55);
+}
+.dark-ground .editorial-scene{ background:rgba(107,240,200,0.06); }
+.dark-ground .editorial-scene figcaption{ color:rgba(238,242,240,0.55); }
+.editorial-scene.right{ margin-left:auto; }
+@media (max-width:480px){ .editorial-scene{ max-width:240px; } }
+
+.scene-doc{ fill:rgba(20,23,26,0.03); stroke:rgba(20,23,26,0.16); stroke-width:1.5; }
+.scene-line{ stroke:rgba(20,23,26,0.22); stroke-width:3; stroke-linecap:round; }
+.scene-line.thick{ stroke:var(--teal); stroke-width:4; }
+.scene-glass{ fill:none; stroke:var(--mint); stroke-width:4; stroke-linecap:round; filter:drop-shadow(0 0 3px rgba(14,157,120,0.4)); }
+.scene-scan{ fill:rgba(107,240,200,0.22); animation:scanSweep 3s ease-in-out infinite; }
+@keyframes scanSweep{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(144px); } }
+
+.scene-bubble-sent{ fill:rgba(107,240,200,0.14); stroke:var(--mint); stroke-width:2; }
+.scene-check{ fill:none; stroke:var(--mint); stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
+.scene-bubble-wait{ fill:none; stroke:rgba(238,242,240,0.35); stroke-width:2; stroke-dasharray:5 5; }
+.scene-dot{ fill:rgba(238,242,240,0.55); animation:dotFade 1.6s ease-in-out infinite; }
+.scene-dot.d2{ animation-delay:.2s; }
+.scene-dot.d3{ animation-delay:.4s; }
+@keyframes dotFade{ 0%,100%{ opacity:.2; } 50%{ opacity:.9; } }
+@media (prefers-reduced-motion:reduce){
+  .scene-scan{ animation:none !important; }
+  .scene-dot{ animation:none !important; opacity:.6 !important; }
+}
+.author-row{ display:flex; gap:20px; align-items:flex-start; }
+.author-photo{
+  width:72px; height:72px; border-radius:50%;
+  object-fit:cover; flex:none;
+  border:2px solid var(--mint);
+  box-shadow:0 0 0 4px rgba(107,240,200,0.12);
+}
+@media (max-width:480px){ .author-row{flex-direction:column; align-items:center; text-align:center} }
+
+/* section icons - calibration-themed, meaningful not decorative */
+h2{ display:flex; align-items:center; gap:12px; }
+h2 svg{ flex:none; width:26px; height:26px; opacity:.85; }
+h2 svg *{ stroke:var(--teal); }
+.dark-ground h2 svg *{ stroke:var(--mint); }
+
+/* stat as mini bar chart */
+.stat-bar-wrap{ flex:1; }
+.stat-bar-track{ height:6px; border-radius:3px; background:rgba(107,240,200,0.15); overflow:hidden; margin-top:9px; width:100%; max-width:220px; }
+.stat-bar-fill{ height:100%; background:linear-gradient(90deg,var(--teal),var(--mint)); border-radius:3px; width:0; animation:barFill 1.1s .2s cubic-bezier(.4,0,.2,1) forwards; }
+.stat.reveal.in .stat-bar-fill{ animation-play-state:running; }
+@keyframes barFill{ to{ width:var(--pct,60%); } }
+.stat:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(107,240,200,0.12); }
+.stat{ transition:transform .25s ease, box-shadow .25s ease; }
+
+@media (prefers-reduced-motion:reduce){
+  .reveal{ opacity:1 !important; transform:none !important; transition:none !important; }
+  .hero .eyebrow,.hero h1,.hero .lead,.hero .meta,.gauge-wrap{ animation:none !important; opacity:1 !important; }
+  .gauge-fill{ animation:none !important; stroke-dashoffset:0 !important; }
+  .gauge-dot{ animation:none !important; opacity:1 !important; transform:none !important; }
+  .stat-bar-fill{ animation:none !important; width:var(--pct,60%) !important; }
+  html{ scroll-behavior:auto; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero grain">
+  <div class="hero-inner">
+    <div class="gauge-wrap">
+      <svg class="gauge" viewBox="0 0 240 140" aria-hidden="true">
+        <path class="gauge-track" d="M 30 120 A 90 90 0 0 1 210 120"/>
+        <line class="tick" x1="30" y1="120" x2="44" y2="120"/>
+        <line class="tick" x1="42.1" y1="75" x2="54.2" y2="82"/>
+        <line class="tick tick-hi" x1="75" y1="42.1" x2="82" y2="54.2"/>
+        <line class="tick tick-hi" x1="120" y1="30" x2="120" y2="44"/>
+        <line class="tick" x1="165" y1="42.1" x2="158" y2="54.2"/>
+        <line class="tick" x1="197.9" y1="75" x2="185.8" y2="82"/>
+        <line class="tick" x1="210" y1="120" x2="196" y2="120"/>
+        <path class="gauge-fill" d="M 75 42.1 A 90 90 0 0 1 120 30"/>
+        <circle class="gauge-dot" cx="96.7" cy="33.1" r="5"/>
+      </svg>
+      <div class="gauge-label">
+        <span class="gauge-num display">10-15</span>
+        <span class="gauge-sub">секунд решают первое впечатление</span>
+      </div>
+    </div>
+    <p class="eyebrow">Карьерная калибровка &middot; изнутри найма</p>
+    <h1 class="display">Как принимается решение о найме</h1>
+    <p class="lead">Столько времени читают ваше резюме. Дальше решение проходит ещё несколько стадий, и кандидат видит только первую - дальше решает то, что от него не зависит вовсе.</p>
+    <div class="meta">
+      <span>Вероника Малых</span><span class="dot"></span><span>15+ лет в подборе персонала</span><span class="dot"></span><span>~9 мин чтения</span>
+    </div>
+  </div>
+</header>
+
+<div class="scale" aria-hidden="true">
+  <script>document.write(Array.from({length:60}).map(()=>'<i></i>').join(''))</script>
+  <span class="pt"></span>
+</div>
+
+<main>
+
+<section class="block reveal">
+  <p>Сначала резюме читают за 10-15 секунд - смотрят не на то, что вы делали, а на то, как это написано. Дальше, если дошли до интервью, включаются факторы, которые к вашему уровню отношения не имеют вовсе: бюджет момента, политика внутри команды, то, как считывается ваша зарплатная позиция. Больше 15 лет я сижу по другую сторону стола - дальше весь путь от отклика до тишины после него, и на каждом шаге решает не только уровень</p>
+  <div class="stat">
+    <span class="num">84%</span>
+    <div class="stat-bar-wrap">
+      <span class="txt">соискателей испытывают страхи при поиске работы - и в этом состоянии читают каждый последующий сигнал<span class="src">hh.ru, 8 500 опрошенных</span></span>
+      <div class="stat-bar-track"><div class="stat-bar-fill" style="--pct:84%"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block reveal">
+  <figure class="editorial-scene">
+    <svg viewBox="0 0 300 220" aria-hidden="true">
+      <rect x="90" y="20" width="120" height="170" rx="8" class="scene-doc"/>
+      <line x1="108" y1="46" x2="192" y2="46" class="scene-line thick"/>
+      <line x1="108" y1="60" x2="170" y2="60" class="scene-line"/>
+      <line x1="108" y1="80" x2="192" y2="80" class="scene-line"/>
+      <line x1="108" y1="92" x2="180" y2="92" class="scene-line"/>
+      <line x1="108" y1="104" x2="160" y2="104" class="scene-line"/>
+      <line x1="108" y1="124" x2="192" y2="124" class="scene-line"/>
+      <line x1="108" y1="136" x2="175" y2="136" class="scene-line"/>
+      <line x1="108" y1="148" x2="192" y2="148" class="scene-line"/>
+      <line x1="108" y1="160" x2="150" y2="160" class="scene-line"/>
+      <rect x="90" y="20" width="120" height="26" class="scene-scan"/>
+      <g class="scene-glass">
+        <circle cx="205" cy="60" r="26"/>
+        <line x1="224" y1="79" x2="248" y2="103"/>
+      </g>
+    </svg>
+    <figcaption>10-15 секунд на первый экран</figcaption>
+  </figure>
+  <h2><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><circle cx="10" cy="10" r="6"/><line x1="15" y1="15" x2="20" y2="20"/></svg>Что рекрутер смотрит в первую очередь</h2>
+  <p>Первое - сколько человек работает на текущей позиции. Меньше трёх месяцев - сразу вопрос, не сложилось ли с испытательным сроком. Это не приговор: если в остальном профиль подходит, короткий срок можно обсудить на созвоне. Но строчка заметна, и лучше, если она объяснена в самом резюме, а не оставлена на догадку</p>
+  <p>Второе - откуда идёт опыт и насколько он бьётся с запросом вакансии. Если ищу менеджера проектов, которому нужно разбираться в химии, кандидат из химической отрасли предпочтительнее сильного проджекта вообще без этого контекста. Дело не в уровне, а в совпадении с конкретной задачей - и с первого экрана оно либо видно, либо нет</p>
+</section>
+
+<section class="block reveal">
+  <h2><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg>Почему «участвовал в проекте» не работает</h2>
+  <p>Самая частая формулировка-невидимка. За ней может стоять полгода работы и понятный результат, но снаружи она не говорит ничего: что именно человек делал и чем кончилось, неизвестно, а выяснять это на этапе отклика никто не будет</p>
+  <p>Разница между «проект состоял из того-то и того-то» и рассказом от первого лица - я включил, разработал, исправил, без общих «мы» - огромная. Я и на интервью отдельно прошу рассказать: что ожидалось от проекта и чем закончилось, какой результат принесла именно ваша работа. Через ту же призму опыт читает не только рекрутер, но и нанимающий менеджер, который смотрит резюме сам</p>
+  <p>Крайности мешают одинаково. Сильный бэкграунд, а опыт описан парой фраз - вывод один: человек сейчас не очень готов к смене работы, мотивация невысокая, и чаще всего это подтверждается. Обратная сторона - должностная инструкция, перенесённая в опыт как есть: читается как инструкция, а не как живая работа. Золотая середина между «что я делал» и бесконечным перечислением всего, к чему вы прикасались, и есть то, что помогает резюме читаться</p>
+</section>
+
+<section class="block reveal">
+  <h2><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>Что читается между строк, кроме опыта</h2>
+  <p>Открывая отклик, я считываю не только опыт и навыки. Между строк читается и то, в каком вы состоянии: насколько нужна эта работа, насколько вы в себе уверены. Опыт в две строки читается не как «плохо постарался», а как «человек не очень хочет уходить, руки не дошли»</p>
+  <div class="stat">
+    <span class="num">32%</span>
+    <div class="stat-bar-wrap">
+      <span class="txt">соискателей называют отказ без объяснений главной трудностью поиска<span class="src">hh.ru</span></span>
+      <div class="stat-bar-track"><div class="stat-bar-fill" style="--pct:32%"></div></div>
+    </div>
+  </div>
+  <p>Резюме и сопроводительные сейчас массово пишут через нейросети, и они выходят похожими одно на другое. hh.ru прямо вынес это в тренды найма на 2026 год: рынок устал от однотипных вылизанных резюме по шаблонам. Конкретика из вашей практики работает сейчас сильнее, чем несколько лет назад - в шаблонном тексте её просто нет</p>
+</section>
+
+<section class="block reveal">
+  <h2><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M3 12h5l2 3h4l2-3h5"/></svg>Почему резюме не доходит до того, кто решает</h2>
+  <p>Даже хорошо написанный опыт нужно донести до глаз рекрутера. Я редко просматриваю резюме дальше 3-4 страниц выдачи, иногда дохожу до 5-6, но это уже исключение. Не откликайтесь на все вакансии подряд - когда я вижу один и тот же профиль сразу на всех позициях, становится непонятно, кем человек себя видит</p>
+</section>
+
+<div class="pivot reveal">
+  <div class="side out"><b>Что видите вы</b>резюме, отклик, ожидание</div>
+  <div class="side in"><b>Что решает дальше</b>то, что вы никогда не увидите</div>
+</div>
+
+<div class="dark-ground grain">
+<section class="block reveal">
+  <h2><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 7h14"/><path d="M5 7 2 13a3 3 0 0 0 6 0Z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0Z"/></svg>Значит ли отказ, что вы не дотягиваете</h2>
+  <p>Кандидаты почти всегда путают две разные ситуации: не совпали с конкретной вакансией и не дотягиваете в принципе. От этого зависит, что делать дальше - искать более точное совпадение или пересобирать профиль целиком</p>
+  <p>Не совпасть можно по разным причинам, которые к вашему уровню отношения не имеют - иногда просто не тот момент, иногда рядом не нашлось вашей отрасли, а иногда на эту конкретную позицию был другой бюджет</p>
+  <p>Знаю знакомую, которая искала работу рядом с домом три года - не потому что была слабым специалистом, а потому что ждала конкретного совпадения: свободной позиции в шаговой доступности с удобным графиком. Три года - это не про уровень, это про то, сколько иногда нужно времени, чтобы звёзды сложились именно под ваш запрос</p>
+</section>
+
+<section class="block reveal">
+  <h2><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="10" r="4"/><circle cx="16" cy="10" r="4" opacity=".5"/></svg>Почему на вакансию иногда берут того, кто слабее вас</h2>
+  <p>Если вы узнали, что вакансию закрыл человек заведомо слабее вас по опыту, причин может быть несколько, и не все они про вас</p>
+  <p>Первая: тот кандидат точнее и увереннее ответил на те же вопросы на интервью. Это отдельный навык, не совпадающий с уровнем экспертизы</p>
+  <p>Вторая причина встречается едва ли не чаще. В моменте руководителю нужен человек заведомо слабее - по бюджету, по совместимости с командой, по десятку внутренних причин, которые снаружи никогда не видны. По моей практике, такая политическая ситуация внутри компании стоит едва ли не за половиной таких случаев</p>
+</section>
+
+<section class="block reveal">
+  <h2><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H9l-4 4V5Z"/><line x1="4" y1="4" x2="20" y2="16"/></svg>Почему рекрутер молчит вместо того чтобы объяснить отказ</h2>
+  <p>Самый частый вопрос, который я слышу: «Вероника, скажите честно, что не так». Одна причина простая - рекрутеру самому не всегда дают развёрнутую обратную связь от заказчика. <span class="stopper">Другая серьёзнее</span>: иногда настоящую причину нельзя озвучить вслух - возраст, личные особенности, слишком долгий перерыв в опыте, или наоборот, ощущение, что кандидат слишком силён</p>
+  <div class="stat">
+    <span class="num">300+</span>
+    <span class="txt">откликов может приходить на одну вакансию сейчас<span class="src">Stepwell / Skillbox</span></span>
+  </div>
+  <p>Развёрнутая обратная связь по каждому кандидату при таком потоке - это часы, которых попросту нет. Молчание почти всегда объясняется именно этим сочетанием причин - оценка вас лично тут почти ни при чём</p>
+</section>
+
+<section class="block reveal">
+  <figure class="editorial-scene right">
+    <svg viewBox="0 0 300 220" aria-hidden="true">
+      <path d="M70 40h100a14 14 0 0 1 14 14v40a14 14 0 0 1-14 14h-70l-24 20v-20h-6a14 14 0 0 1-14-14V54a14 14 0 0 1 14-14Z" class="scene-bubble-sent"/>
+      <path d="M92 68l14 14 26-30" class="scene-check"/>
+      <path d="M130 130h100a14 14 0 0 1 14 14v34a14 14 0 0 1-14 14h-70l-24 18v-18h-6a14 14 0 0 1-14-14v-34a14 14 0 0 1 14-14Z" class="scene-bubble-wait"/>
+      <circle cx="160" cy="160" r="4" class="scene-dot d1"/>
+      <circle cx="178" cy="160" r="4" class="scene-dot d2"/>
+      <circle cx="196" cy="160" r="4" class="scene-dot d3"/>
+    </svg>
+    <figcaption>Отправлено. Тишина в ответ</figcaption>
+  </figure>
+  <h2><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg>Что означает тишина после обещанного оффера</h2>
+  <p>Когда всё шло к результату, вам сказали «завтра пришлём оффер», а дальше тишина - кандидат обычно достраивает одну из трёх версий: не подхожу под позицию, появился кандидат сильнее, или переоценил свои зарплатные ожидания. Но ни одна из версий не гарантированно верна - правда может быть в любой из них, а может быть вообще не связана с вами</p>
+</section>
+
+<section class="block reveal">
+  <h2><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l6 6 4-4 8 8"/><path d="M15 17h6v-6"/></svg>Опасно ли резко снижать зарплатные ожидания</h2>
+  <p>Когда я вижу кандидата явно выше уровня позиции, который на входе просит меньше, чем получал раньше, у меня в первую очередь возникает вопрос. Слишком резкое снижение читается как сигнал, что дело не в скромности, а в том, что кандидата давно никуда не берут</p>
+  <p>Обоснованно подвинуться в переговорах - нормально. Резко обрушить цифру, потому что «раз молчат, значит я себя переоценил» - работает против вас</p>
+  <div class="stat">
+    <span class="num">40-50%</span>
+    <div class="stat-bar-wrap">
+      <span class="txt">дохода может составлять разрыв у специалистов, которые системно занижают свою цену на переговорах<span class="src">Известия, апрель 2026</span></span>
+      <div class="stat-bar-track"><div class="stat-bar-fill" style="--pct:45%"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block reveal">
+  <h2><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13"/><path d="M13 4l4 4-4 4"/><path d="M20 16H7"/><path d="M11 12l-4 4 4 4"/></svg>Как торговаться, чтобы это работало на вас</h2>
+  <p>Уверенность в цифре появляется не из смелости, а из информации. Не абстрактное «я хочу N», а «под такие-то задачи я делал то-то, и это дало такой-то результат» - в цифрах, где можно, или в формулировке «хотели - получили», где цифры закрыты</p>
+</section>
+
+<section class="block reveal">
+  <h2><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><circle cx="7" cy="12" r="3"/><rect x="14" y="9" width="6" height="6" rx="1"/></svg>Почему провал или победа изнутри выглядят иначе снаружи</h2>
+  <blockquote>«Мы прямо влюбились друг в друга с первого взгляда, точно будет следующий этап» - а обратная связь звучит ровно наоборот: продолжать не будем</blockquote>
+  <p>Кандидат себя не обманывает специально - просто со своей стороны стола сложно услышать, как звучишь снаружи. Нужен кто-то со стороны, потому что изнутри разрыв между «я звучал уверенно» и «как это прозвучало» почти невозможно заметить самому</p>
+  <div class="stat">
+    <span class="num">+40%</span>
+    <span class="txt">к зарплате получил senior-разработчик, два года откладывавший собеседования из-за страха - когда решился, оказалось, что дело было не в готовности<span class="src">кейс HireHi</span></span>
+  </div>
+</section>
+</div>
+
+<section class="block reveal" style="padding-top:52px">
+  <h2><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11"/><path d="M9 12h11"/><path d="M9 18h11"/><path d="m3 6 1 1 2-2"/><path d="m3 12 1 1 2-2"/><path d="m3 18 1 1 2-2"/></svg>Что проверить сегодня</h2>
+  <ul class="checklist">
+    <li>Посмотрите на первый экран резюме глазами человека, у которого 10-15 секунд - видно ли с него, что вы делали и что получилось</li>
+    <li>Перепишите опыт с языка процесса на язык результата - не «участвовал в проекте», а какие задачи вам ставили и что вы успели сделать</li>
+    <li>Откликайтесь прицельно, а не на всё подряд</li>
+    <li>Разделите «не совпали» и «не дотянули» - от диагноза зависит, что делать</li>
+    <li>Если получили тишину вместо обещанного оффера - не держитесь за одну версию причины, их минимум три</li>
+    <li>Прежде чем резко снижать зарплатные ожидания - соберите информацию по вакансии и обоснуйте цифру результатом</li>
+    <li>Не сдавайтесь при малом количестве приглашений - рынок сейчас в моменте, а не ваш уровень насовсем</li>
+    <li>Если чувствуете, что переговоры прошли отлично, а ответа нет - сверьтесь с кем-то со стороны</li>
+  </ul>
+  <p style="margin-top:26px">Часть решений о найме зависит от вещей, которые кандидат никогда не узнает: внутренняя политика компании, бюджет в моменте, совпадение с задачей, которая была актуальна именно сейчас. Профиль стоит держать в порядке - но не каждый отказ объясним</p>
+</section>
+
+</main>
+
+<footer class="grain">
+  <div class="fwrap author-row">
+    <img class="author-photo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAAB//8AAKACAAQAAAABAAAA2KADAAQAAAABAAAA2AAAAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/+IH2ElDQ19QUk9GSUxFAAEBAAAHyGFwcGwCIAAAbW50clJHQiBYWVogB9kAAgAZAAsAGgALYWNzcEFQUEwAAAAAYXBwbAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALZGVzYwAAAQgAAABvZHNjbQAAAXgAAAWKY3BydAAABwQAAAA4d3RwdAAABzwAAAAUclhZWgAAB1AAAAAUZ1hZWgAAB2QAAAAUYlhZWgAAB3gAAAAUclRSQwAAB4wAAAAOY2hhZAAAB5wAAAAsYlRSQwAAB4wAAAAOZ1RSQwAAB4wAAAAOZGVzYwAAAAAAAAAUR2VuZXJpYyBSR0IgUHJvZmlsZQAAAAAAAAAAAAAAFEdlbmVyaWMgUkdCIFByb2ZpbGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG1sdWMAAAAAAAAAHwAAAAxza1NLAAAAKAAAAYRkYURLAAAAJAAAAaxjYUVTAAAAJAAAAdB2aVZOAAAAJAAAAfRwdEJSAAAAJgAAAhh1a1VBAAAAKgAAAj5mckZVAAAAKAAAAmhodUhVAAAAKAAAApB6aFRXAAAAEgAAArhrb0tSAAAAFgAAAspuYk5PAAAAJgAAAuBjc0NaAAAAIgAAAwZoZUlMAAAAHgAAAyhyb1JPAAAAJAAAA0ZkZURFAAAALAAAA2ppdElUAAAAKAAAA5ZzdlNFAAAAJgAAAuB6aENOAAAAEgAAA75qYUpQAAAAGgAAA9BlbEdSAAAAIgAAA+pwdFBPAAAAJgAABAxubE5MAAAAKAAABDJlc0VTAAAAJgAABAx0aFRIAAAAJAAABFp0clRSAAAAIgAABH5maUZJAAAAKAAABKBockhSAAAAKAAABMhwbFBMAAAALAAABPBydVJVAAAAIgAABRxlblVTAAAAJgAABT5hckVHAAAAJgAABWQAVgFhAGUAbwBiAGUAYwBuAP0AIABSAEcAQgAgAHAAcgBvAGYAaQBsAEcAZQBuAGUAcgBlAGwAIABSAEcAQgAtAHAAcgBvAGYAaQBsAFAAZQByAGYAaQBsACAAUgBHAEIAIABnAGUAbgDoAHIAaQBjAEMepQB1ACAAaADsAG4AaAAgAFIARwBCACAAQwBoAHUAbgBnAFAAZQByAGYAaQBsACAAUgBHAEIAIABHAGUAbgDpAHIAaQBjAG8EFwQwBDMEMAQ7BEwEPQQ4BDkAIAQ/BEAEPgREBDAEOQQ7ACAAUgBHAEIAUAByAG8AZgBpAGwAIABnAOkAbgDpAHIAaQBxAHUAZQAgAFIAVgBCAMEAbAB0AGEAbADhAG4AbwBzACAAUgBHAEIAIABwAHIAbwBmAGkAbJAadSgAUgBHAEKCcl9pY8+P8Md8vBgAIABSAEcAQgAg1QS4XNMMx3wARwBlAG4AZQByAGkAcwBrACAAUgBHAEIALQBwAHIAbwBmAGkAbABPAGIAZQBjAG4A/QAgAFIARwBCACAAcAByAG8AZgBpAGwF5AXoBdUF5AXZBdwAIABSAEcAQgAgBdsF3AXcBdkAUAByAG8AZgBpAGwAIABSAEcAQgAgAGcAZQBuAGUAcgBpAGMAQQBsAGwAZwBlAG0AZQBpAG4AZQBzACAAUgBHAEIALQBQAHIAbwBmAGkAbABQAHIAbwBmAGkAbABvACAAUgBHAEIAIABnAGUAbgBlAHIAaQBjAG9mbpAaAFIARwBCY8+P8GWHTvZOAIIsACAAUgBHAEIAIDDXMO0w1TChMKQw6wOTA7UDvQO5A7oDzAAgA8ADwQO/A8YDrwO7ACAAUgBHAEIAUABlAHIAZgBpAGwAIABSAEcAQgAgAGcAZQBuAOkAcgBpAGMAbwBBAGwAZwBlAG0AZQBlAG4AIABSAEcAQgAtAHAAcgBvAGYAaQBlAGwOQg4bDiMORA4fDiUOTAAgAFIARwBCACAOFw4xDkgOJw5EDhsARwBlAG4AZQBsACAAUgBHAEIAIABQAHIAbwBmAGkAbABpAFkAbABlAGkAbgBlAG4AIABSAEcAQgAtAHAAcgBvAGYAaQBpAGwAaQBHAGUAbgBlAHIAaQENAGsAaQAgAFIARwBC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" alt="Вероника Малых" width="72" height="72">
+    <div>
+      <p><strong>Вероника Малых.</strong> Больше 15 лет в подборе персонала: агентства, менеджер по подбору в крупной компании.</p>
+      <p style="margin-top:10px">Пишу о том, как рынок читает специалистов и что видно нанимающему менеджеру, чего не видно вам: <a href="https://kariernay-kalibrovka.ru">kariernay-kalibrovka.ru</a></p>
+      <p style="margin-top:10px"><a href="https://t.me/Kalibrov_ka_bot?start=article_p4">Пройти калибровку в Telegram</a></p>
+      <a class="back" href="index.html">&larr; на главную</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var items = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduced){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add('in'); });
+  }
+
+})();
+</script>
+
+</body>
+</html>
