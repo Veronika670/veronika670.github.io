@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Карьерная калибровка — диалог (резерв)</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{
+  --bg:#fdfcfa; --text:#2b2b33; --muted:#6b6b76; --accent:#4a6fa5;
+  --accent-dark:#3b5a87; --card:#f3f1ec; --border:#e4e1da;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#17171c; --text:#e8e6e1; --muted:#a2a2ab; --accent:#7fa3d4;
+    --accent-dark:#9db9e0; --card:#20202a; --border:#31313d;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  min-height:100vh; display:flex; flex-direction:column; align-items:center;
+}
+.wrap{max-width:640px; width:100%; padding:20px; display:flex; flex-direction:column; min-height:100vh}
+h1{font-size:1.1rem; font-weight:600; margin:8px 0 4px}
+.hint{color:var(--muted); font-size:0.9rem; margin-bottom:16px; line-height:1.5}
+.safety{
+  background:var(--card); border:1px solid var(--border); border-radius:10px;
+  padding:12px 14px; font-size:0.85rem; color:var(--muted); margin-bottom:18px; line-height:1.5;
+}
+#gate{display:flex; flex-direction:column; gap:10px; max-width:420px}
+#gate input{
+  padding:10px 12px; border-radius:8px; border:1px solid var(--border);
+  background:var(--bg); color:var(--text); font-size:1rem;
+}
+button{
+  padding:10px 16px; border-radius:8px; border:none; background:var(--accent);
+  color:#fff; font-size:1rem; cursor:pointer;
+}
+button:hover{background:var(--accent-dark)}
+button:disabled{opacity:0.5; cursor:not-allowed}
+#chat{display:none; flex-direction:column; flex:1}
+#messages{flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:12px; padding:8px 0}
+.msg{padding:10px 14px; border-radius:12px; max-width:85%; line-height:1.5; white-space:pre-wrap}
+.msg.bot{background:var(--card); border:1px solid var(--border); align-self:flex-start}
+.msg.user{background:var(--accent); color:#fff; align-self:flex-end}
+.msg.report{background:var(--card); border:2px solid var(--accent); align-self:stretch; max-width:100%}
+#input-row{display:flex; gap:8px; margin-top:12px}
+#input-row textarea{
+  flex:1; padding:10px 12px; border-radius:8px; border:1px solid var(--border);
+  background:var(--bg); color:var(--text); font-size:1rem; resize:none; font-family:inherit;
+}
+.error{color:#c0392b; font-size:0.9rem; margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Карьерная калибровка</h1>
+  <p class="hint">
+    Резервная веб-версия диалога на случай, если бот в Telegram недоступен. Метод тот же -
+    «фильтр нанимающего менеджера с 15+ лет практики», три зоны потерь. Код доступа выдаёт автор лично.
+  </p>
+  <div class="safety">
+    Если тебе прямо сейчас плохо настолько, что это выходит за рамки поиска работы - не жди
+    диалога, напиши напрямую в поддержку (контакт указан на <a href="index.html">главной странице</a>).
+  </div>
+
+  <div id="gate">
+    <input type="text" id="access-code" placeholder="Код доступа от автора" autocomplete="off">
+    <button id="start-btn">Начать диалог</button>
+    <div class="error" id="gate-error"></div>
+  </div>
+
+  <div id="chat">
+    <div id="messages"></div>
+    <div id="input-row">
+      <textarea id="user-input" rows="2" placeholder="Твой ответ..."></textarea>
+      <button id="send-btn">Отправить</button>
+    </div>
+    <div class="error" id="chat-error"></div>
+  </div>
+</div>
+
+<script>
+// Задеплоено на Railway 16.08.2026 - риск №1 закрыт, бэкенд живёт в сервисе
+// kalibrovka-web (тот же проект kariernaya-kalibrovka, что и основной бот).
+const API_BASE_URL = "https://kalibrovka-web-production.up.railway.app";
+
+let sessionId = null;
+
+const gateEl = document.getElementById('gate');
+const chatEl = document.getElementById('chat');
+const messagesEl = document.getElementById('messages');
+const gateErrorEl = document.getElementById('gate-error');
+const chatErrorEl = document.getElementById('chat-error');
+
+function addMessage(text, cls) {
+  const div = document.createElement('div');
+  div.className = 'msg ' + cls;
+  div.textContent = text;
+  messagesEl.appendChild(div);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+
+async function startDialog() {
+  gateErrorEl.textContent = '';
+  if (!API_BASE_URL) {
+    gateErrorEl.textContent = 'Сервер ещё не подключён (API_BASE_URL пуст) - это ожидаемо до деплоя бэкенда, см. риск №1.';
+    return;
+  }
+  const code = document.getElementById('access-code').value.trim();
+  if (!code) {
+    gateErrorEl.textContent = 'Введите код доступа';
+    return;
+  }
+  try {
+    const res = await fetch(API_BASE_URL + '/api/start', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({access_code: code}),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      gateErrorEl.textContent = err.detail || ('Ошибка ' + res.status);
+      return;
+    }
+    const data = await res.json();
+    sessionId = data.session_id;
+    gateEl.style.display = 'none';
+    chatEl.style.display = 'flex';
+    addMessage(data.welcome, 'bot');
+    addMessage(data.first_question, 'bot');
+  } catch (e) {
+    gateErrorEl.textContent = 'Не удалось связаться с сервером: ' + e.message;
+  }
+}
+
+async function sendMessage() {
+  chatErrorEl.textContent = '';
+  const input = document.getElementById('user-input');
+  const text = input.value.trim();
+  if (!text || !sessionId) return;
+
+  addMessage(text, 'user');
+  input.value = '';
+  document.getElementById('send-btn').disabled = true;
+
+  try {
+    const res = await fetch(API_BASE_URL + '/api/message', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({session_id: sessionId, text: text}),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      chatErrorEl.textContent = err.detail || ('Ошибка ' + res.status);
+      return;
+    }
+    const data = await res.json();
+    if (data.kind === 'report') {
+      addMessage(data.text, 'report');
+      document.getElementById('input-row').style.display = 'none';
+    } else if (data.kind === 'alert') {
+      addMessage(data.text, 'bot');
+      document.getElementById('input-row').style.display = 'none';
+    } else {
+      addMessage(data.text, 'bot');
+    }
+  } catch (e) {
+    chatErrorEl.textContent = 'Не удалось связаться с сервером: ' + e.message;
+  } finally {
+    document.getElementById('send-btn').disabled = false;
+  }
+}
+
+document.getElementById('start-btn').addEventListener('click', startDialog);
+document.getElementById('send-btn').addEventListener('click', sendMessage);
+document.getElementById('user-input').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMessage();
+  }
+});
+</script>
+</body>
+</html>
