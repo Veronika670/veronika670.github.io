@@ -30,6 +30,7 @@ h1{font-size:1.1rem; font-weight:600; margin:8px 0 4px}
   padding:12px 14px; font-size:0.85rem; color:var(--muted); margin-bottom:18px; line-height:1.5;
 }
 #gate{display:flex; flex-direction:column; gap:10px; max-width:420px}
+#consent{display:flex; flex-direction:column; gap:10px; max-width:520px}
 #gate input{
   padding:10px 12px; border-radius:8px; border:1px solid var(--border);
   background:var(--bg); color:var(--text); font-size:1rem;
@@ -72,6 +73,12 @@ button:disabled{opacity:0.5; cursor:not-allowed}
     <div class="error" id="gate-error"></div>
   </div>
 
+  <div id="consent" style="display:none">
+    <p class="hint" id="consent-text" style="white-space:pre-wrap"></p>
+    <button id="consent-btn">Согласен(на)</button>
+    <div class="error" id="consent-error"></div>
+  </div>
+
   <div id="chat">
     <div id="messages"></div>
     <div id="input-row">
@@ -90,9 +97,11 @@ const API_BASE_URL = "https://kalibrovka-web-production.up.railway.app";
 let sessionId = null;
 
 const gateEl = document.getElementById('gate');
+const consentEl = document.getElementById('consent');
 const chatEl = document.getElementById('chat');
 const messagesEl = document.getElementById('messages');
 const gateErrorEl = document.getElementById('gate-error');
+const consentErrorEl = document.getElementById('consent-error');
 const chatErrorEl = document.getElementById('chat-error');
 
 function addMessage(text, cls) {
@@ -128,11 +137,34 @@ async function startDialog() {
     const data = await res.json();
     sessionId = data.session_id;
     gateEl.style.display = 'none';
+    consentEl.style.display = 'flex';
+    document.getElementById('consent-text').textContent = data.consent_text;
+  } catch (e) {
+    gateErrorEl.textContent = 'Не удалось связаться с сервером: ' + e.message;
+  }
+}
+
+async function acceptConsent() {
+  consentErrorEl.textContent = '';
+  if (!sessionId) return;
+  try {
+    const res = await fetch(API_BASE_URL + '/api/consent', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({session_id: sessionId}),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      consentErrorEl.textContent = err.detail || ('Ошибка ' + res.status);
+      return;
+    }
+    const data = await res.json();
+    consentEl.style.display = 'none';
     chatEl.style.display = 'flex';
     addMessage(data.welcome, 'bot');
     addMessage(data.first_question, 'bot');
   } catch (e) {
-    gateErrorEl.textContent = 'Не удалось связаться с сервером: ' + e.message;
+    consentErrorEl.textContent = 'Не удалось связаться с сервером: ' + e.message;
   }
 }
 
@@ -175,6 +207,7 @@ async function sendMessage() {
 }
 
 document.getElementById('start-btn').addEventListener('click', startDialog);
+document.getElementById('consent-btn').addEventListener('click', acceptConsent);
 document.getElementById('send-btn').addEventListener('click', sendMessage);
 document.getElementById('user-input').addEventListener('keydown', (e) => {
   if (e.key === 'Enter' && !e.shiftKey) {
