@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Первый экран резюме - проверка за 7 минут</title>
+  <meta name="description" content="Пять проверок, которые покажут, понятны ли из первого экрана ваша роль, уровень и личный вклад">
+  <link rel="canonical" href="https://kariernay-kalibrovka.ru/guide-rezyume/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&amp;family=Unbounded:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#101412;--paper:#f5f4ef;--card:#fff;--mint:#74efc8;--mint-dark:#087c5d;--muted:#626864;--line:rgba(16,20,18,.13)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 "Golos Text",sans-serif}.wrap{width:min(820px,calc(100% - 40px));margin:auto}.display{font-family:"Unbounded",sans-serif;letter-spacing:-.055em}
+    .hero{position:relative;overflow:hidden;background:var(--ink);color:var(--paper);padding:24px 0 84px}.hero:after{content:"";position:absolute;width:640px;height:640px;right:-160px;top:-260px;border-radius:50%;background:radial-gradient(circle,rgba(116,239,200,.3),transparent 68%);filter:blur(10px)}nav{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}nav a{color:inherit;text-decoration:none}.brand{display:flex;align-items:center;gap:10px}.dot{width:10px;height:10px;border-radius:50%;background:var(--mint);box-shadow:0 0 22px var(--mint)}.hero-copy{position:relative;z-index:1;padding-top:76px}.eyebrow{color:var(--mint);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.hero h1{max-width:780px;margin:24px 0;font-size:clamp(40px,7vw,76px);line-height:.95;font-weight:500}.lead{max-width:650px;color:rgba(245,244,239,.74);font-size:clamp(18px,2.4vw,22px)}.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:30px}.chip{padding:8px 13px;border:1px solid rgba(116,239,200,.28);border-radius:999px;background:rgba(116,239,200,.08);color:#caffed;font-size:12px;font-weight:600}
+    main{padding:72px 0 96px}.start{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end;margin-bottom:38px}.start h2,.result h2,.next h2{margin:0 0 14px;font-size:clamp(27px,4vw,42px);line-height:1.08;font-weight:500}.start p{margin:0;color:var(--muted)}.timer{min-width:132px;padding:18px;border-radius:18px;background:var(--mint);text-align:center}.timer strong{display:block;font:500 30px/1 "Unbounded",sans-serif}.timer span{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.09em}
+    .checks{display:grid;gap:14px}.check{position:relative;display:grid;grid-template-columns:54px 1fr;gap:18px;padding:25px;border:1px solid var(--line);border-radius:22px;background:var(--card);box-shadow:0 14px 38px rgba(16,20,18,.05);cursor:pointer;transition:.2s}.check:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(16,20,18,.08)}.check.done{border-color:var(--mint-dark);background:#edfff8}.check input{position:absolute;opacity:0}.mark{display:grid;place-items:center;width:50px;height:50px;border:1px solid var(--line);border-radius:15px;font:500 16px "Unbounded",sans-serif}.done .mark{background:var(--mint);border-color:var(--mint)}.done .mark:after{content:"✓"}.done .mark span{display:none}.check strong{display:block;margin-bottom:7px;font-size:19px;line-height:1.25}.check p{margin:0;color:var(--muted);font-size:15px}.example{display:block;margin-top:9px;color:var(--mint-dark);font-size:14px;font-weight:600}
+    .result{margin-top:34px;padding:34px;border-radius:26px;background:var(--ink);color:var(--paper);box-shadow:0 25px 70px rgba(16,20,18,.18)}.score{color:var(--mint);font:500 clamp(48px,8vw,76px)/1 "Unbounded",sans-serif}.result p{max-width:650px;margin:14px 0 0;color:rgba(245,244,239,.72)}
+    .boundary{margin:38px 0 0;padding:22px 24px;border-left:4px solid var(--mint);background:#e7eee9;color:var(--muted)}.next{padding:76px 0;background:#e7ebe7}.next p{max-width:650px;color:var(--muted)}.btn{display:inline-flex;margin-top:18px;padding:16px 25px;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:700;text-decoration:none}.btn:hover{background:#23302b}footer{padding:34px 0 44px;background:var(--ink);color:rgba(245,244,239,.55);font-size:12px}footer p{margin:4px 0}footer a{color:var(--mint)}
+    @media(max-width:620px){.wrap{width:min(100% - 28px,820px)}.hero{padding-bottom:62px}.hero-copy{padding-top:56px}.start{grid-template-columns:1fr}.timer{justify-self:start}.check{grid-template-columns:44px 1fr;padding:20px;gap:14px}.mark{width:42px;height:42px}.result{padding:26px}.back{display:none}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <nav><a class="brand" href="/"><span class="dot"></span>Карьерная калибровка</a><a class="back" href="/">На главную</a></nav>
+      <div class="hero-copy">
+        <div class="eyebrow">Материал по кодовому слову «РЕЗЮМЕ»</div>
+        <h1 class="display">Первый экран резюме за 7 минут</h1>
+        <p class="lead">Пять проверок перед следующим откликом. Без переписывания всего резюме и без общих советов</p>
+        <div class="chips"><span class="chip">5 проверок</span><span class="chip">7 минут</span><span class="chip">Результат сразу</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main><div class="wrap">
+    <section class="start">
+      <div><h2 class="display">Открой своё резюме рядом</h2><p>Смотри только на ту часть, которая видна до первой прокрутки. Отмечай пункт, если ответ ясно виден в тексте</p></div>
+      <div class="timer"><strong>07:00</strong><span>на проверку</span></div>
+    </section>
+
+    <section class="checks" aria-label="Проверки резюме">
+      <label class="check"><input type="checkbox"><span class="mark"><span>01</span></span><span><strong>Видна одна целевая роль</strong><p>По заголовку и первым строкам понятно, на какую именно работу ты претендуешь</p><span class="example">Не «руководитель / продажи / проекты» одновременно</span></span></label>
+      <label class="check"><input type="checkbox"><span class="mark"><span>02</span></span><span><strong>Виден уровень задач</strong><p>Последняя роль показывает не только должность, но и масштаб ответственности</p><span class="example">Команда, продукт, рынок или тип решений дают контекст</span></span></label>
+      <label class="check"><input type="checkbox"><span class="mark"><span>03</span></span><span><strong>Есть один видимый результат</strong><p>В последнем опыте есть хотя бы одно изменение, которое произошло благодаря твоей работе</p><span class="example">Не только «отвечала за» и «занимался»</span></span></label>
+      <label class="check"><input type="checkbox"><span class="mark"><span>04</span></span><span><strong>Личный вклад не спрятан за «мы»</strong><p>Понятно, какую задачу ты решал, что изменил, запустил или удержал в общем результате команды</p><span class="example">Командная работа остаётся, но твоя роль не теряется</span></span></label>
+      <label class="check"><input type="checkbox"><span class="mark"><span>05</span></span><span><strong>Не нужно додумывать твою ценность</strong><p>Заголовок, опыт и результат складываются в одну понятную версию того, какие задачи тебе можно доверить</p><span class="example">Не надо знать тебя лично, чтобы увидеть эту связь</span></span></label>
+    </section>
+
+    <section class="result" aria-live="polite"><div class="score"><span id="score">0</span>/5</div><h2 class="display" id="result-title">Отметь то, что уже видно</h2><p id="result-copy">Здесь появится итог проверки. Не старайся отметить всё - задача в том, чтобы увидеть слабое место до следующего отклика</p></section>
+    <p class="boundary">Эта проверка не объясняет конкретный отказ и не обещает звонок. Она показывает только то, насколько ясно сейчас читается верхняя часть резюме</p>
+  </div></main>
+
+  <section class="next"><div class="wrap"><h2 class="display">Если остались спорные пункты</h2><p>В карьерной калибровке мы смотрим шире: как со стороны читаются твой профиль, ответы и ценовая позиция. Без переписывания за тебя и без вердикта «готов или не готов»</p><a class="btn" href="https://t.me/Kalibrov_ka_bot?start=site_resume_guide">Посмотреть калибровку</a></div></section>
+  <footer><div class="wrap"><p>Вероника Малых · Малых В. Н., самозанятая, ИНН 500300041562</p><p><a href="/legal.html">Правовая информация</a></p></div></footer>
+  <script>
+    const checks=[...document.querySelectorAll('.check input')],score=document.getElementById('score'),title=document.getElementById('result-title'),copy=document.getElementById('result-copy');
+    const results=[
+      ['Сейчас первый экран приходится собирать за тебя','Начни с любого неотмеченного пункта, который можно доказать одной строкой. После этого проверь, не противоречат ли друг другу роль и видимый результат'],
+      ['Рекрутеру остаётся многое додумать','Не переписывай всё сразу. Выбери два неотмеченных пункта, которые проще всего доказать одной строкой'],
+      ['Каркас уже виден, но есть зоны неясности','Посмотри на два неотмеченных пункта. Именно там сильный опыт может читаться слабее, чем он есть'],
+      ['Первый экран в целом читается ясно','Остался один спорный сигнал. Его стоит уточнить до следующего отклика, не трогая остальные четыре'],
+      ['Первый экран читается цельно','Роль, уровень, масштаб и личный вклад не противоречат друг другу. Теперь проверь так же следующий отклик']
+    ];
+    function update(){let n=checks.filter(x=>x.checked).length;checks.forEach(x=>x.closest('.check').classList.toggle('done',x.checked));score.textContent=n;if(!n){title.textContent='Отметь то, что уже видно';copy.textContent='Здесь появится итог проверки. Не старайся отметить всё - задача в том, чтобы увидеть слабое место до следующего отклика';return}title.textContent=results[n-1][0];copy.textContent=results[n-1][1]}
+    checks.forEach(x=>x.addEventListener('change',update));
+  </script>
+</body>
+</html>
