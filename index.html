@@ -220,12 +220,20 @@ h2{font-family:"Unbounded","Golos Text",sans-serif;font-weight:500;font-size:cla
     </div>
   </section>
 
-  <!-- 03.09: спрятано, пока у Unisender не работает shared.s3.unisender.ru/popups/popup.js (виджет рендерит пустой блок). Вернуть - убрать style="display:none" ниже -->
-  <section class="test-drive" aria-labelledby="test-drive-mid-title" style="display:none">
+  <!-- 04.09: публичный путь Unisender (raw POST/hash и embed-виджет) упирается в капчу DDoS-Guard - форма ниже шлёт email на свой /api/subscribe (Timeweb), он вызывает Unisender API напрямую -->
+  <section class="test-drive" aria-labelledby="test-drive-mid-title">
     <div class="wrap test-drive-shell">
       <div class="test-drive-copy reveal"><span class="eyebrow">Бесплатный разбор</span><h2 class="display" id="test-drive-mid-title">Заберите разбор «Перевод с рекрутёрского»</h2><p>Шесть формулировок, которыми чаще всего отказывают, и что за каждой из них стоит на самом деле. Плюс вопросы, с которых начинается калибровка - письмами на email</p><div class="sample-questions"><span><i>01</i>Шесть фраз отказа</span><span><i>02</i>Что за ними стоит</span><span><i>03</i>Вопросы для самопроверки</span></div></div>
       <div class="test-drive-form reveal">
-        <div id="unisender-subscribe-form-418089-mid" data-url="https://cp.unisender.com/ru/v5/subscribe-form/view/6fmkcksqncnkpx75ep4d4pwqjqycn9ubu8ffe8fe" data-settings="67955q9miquaeo8yf49zs637kjr6fr3wt5odea771jijnanu4en1o"></div>
+        <form class="js-subscribe-form" data-source="site_perevod_mid" novalidate>
+          <label for="email-mid" style="display:block;margin-bottom:9px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">Email</label>
+          <input type="email" id="email-mid" name="email" required placeholder="ваша почта">
+          <div class="test-consents">
+            <label class="test-consent"><input type="checkbox" required><span>Даю согласие Малых В. Н. (самозанятая, ИНН 500300041562) на обработку почты и имени и на получение писем по теме поиска работы, в том числе рекламных. Отписаться можно в любом письме. Подробнее: <a href="/legal#rassylka">/legal#rassylka</a></span></label>
+          </div>
+          <button type="submit" class="button">Забрать разбор бесплатно</button>
+          <p class="test-drive-note js-subscribe-status" aria-live="polite"></p>
+        </form>
       </div>
     </div>
   </section>
@@ -287,12 +295,20 @@ h2{font-family:"Unbounded","Golos Text",sans-serif;font-weight:500;font-size:cla
     </div>
   </section>
 
-  <!-- 03.09: спрятано, пока у Unisender не работает shared.s3.unisender.ru/popups/popup.js (виджет рендерит пустой блок). Вернуть - убрать style="display:none" ниже -->
-  <section class="test-drive test-drive-final" aria-labelledby="test-drive-final-title" style="display:none">
+  <!-- 04.09: публичный путь Unisender (raw POST/hash и embed-виджет) упирается в капчу DDoS-Guard - форма ниже шлёт email на свой /api/subscribe (Timeweb), он вызывает Unisender API напрямую -->
+  <section class="test-drive test-drive-final" aria-labelledby="test-drive-final-title">
     <div class="wrap test-drive-shell">
       <div class="test-drive-copy reveal"><span class="eyebrow">Можно начать бесплатно</span><h2 class="display" id="test-drive-final-title">Не готовы к калибровке сейчас?</h2><p>Заберите разбор «Перевод с рекрутёрского» и вопросы для самопроверки - письмами на email, без оплаты</p></div>
       <div class="test-drive-form reveal">
-        <div id="unisender-subscribe-form-418089-final" data-url="https://cp.unisender.com/ru/v5/subscribe-form/view/6fmkcksqncnkpx75ep4d4pwqjqycn9ubu8ffe8fe" data-settings="67955q9miquaeo8yf49zs637kjr6fr3wt5odea771jijnanu4en1o"></div>
+        <form class="js-subscribe-form" data-source="site_perevod_final" novalidate>
+          <label for="email-final" style="display:block;margin-bottom:9px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">Email</label>
+          <input type="email" id="email-final" name="email" required placeholder="ваша почта">
+          <div class="test-consents">
+            <label class="test-consent"><input type="checkbox" required><span>Даю согласие Малых В. Н. (самозанятая, ИНН 500300041562) на обработку почты и имени и на получение писем по теме поиска работы, в том числе рекламных. Отписаться можно в любом письме. Подробнее: <a href="/legal#rassylka">/legal#rassylka</a></span></label>
+          </div>
+          <button type="submit" class="button">Забрать разбор бесплатно</button>
+          <p class="test-drive-note js-subscribe-status" aria-live="polite"></p>
+        </form>
       </div>
     </div>
   </section>
@@ -312,7 +328,35 @@ h2{font-family:"Unbounded","Golos Text",sans-serif;font-weight:500;font-size:cla
   if(window.matchMedia('(hover:hover)').matches){document.querySelectorAll('.panel').forEach(function(panel){panel.addEventListener('pointermove',function(event){var box=panel.getBoundingClientRect();panel.style.setProperty('--mx',(event.clientX-box.left)+'px');panel.style.setProperty('--my',(event.clientY-box.top)+'px')})})}
 })();
 </script>
-<script src="https://shared.s3.unisender.ru/popups/popup.js"></script>
-<script>window.popupForSubscriptionsForm("https://apig.unisender.com");</script>
+<script>
+(function(){
+  var API_URL='https://200-165-229-244.sslip.io/api/subscribe';
+  document.querySelectorAll('.js-subscribe-form').forEach(function(form){
+    form.addEventListener('submit',function(event){
+      event.preventDefault();
+      var status=form.querySelector('.js-subscribe-status');
+      var button=form.querySelector('button[type=submit]');
+      var email=form.querySelector('input[type=email]').value.trim();
+      status.textContent='Отправляем…';
+      button.disabled=true;
+      fetch(API_URL,{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({email:email,source:form.dataset.source})
+      }).then(function(response){
+        if(!response.ok){throw new Error('bad status')}
+        return response.json();
+      }).then(function(){
+        status.textContent='Проверьте почту - письмо с подтверждением уже в пути';
+        form.reset();
+      }).catch(function(){
+        status.textContent='Не получилось отправить, попробуйте ещё раз чуть позже';
+      }).finally(function(){
+        button.disabled=false;
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
