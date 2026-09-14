@@ -291,6 +291,33 @@ blockquote::before{
 }
 .checklist li:hover::before{ background:var(--mint); border-color:var(--mint); }
 
+.sticky-cta{
+  position:sticky; top:0; z-index:20;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:12px 20px;
+  background:rgba(20,23,26,0.92); backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(107,240,200,0.18);
+}
+.sticky-cta-brand{ font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; font-weight:700; font-size:13px; color:var(--paper); letter-spacing:-.01em; }
+.sticky-cta .button{ padding:9px 16px; font-size:13px; }
+@media (max-width:480px){ .sticky-cta-brand{ display:none; } .sticky-cta{ justify-content:flex-end; } }
+
+.button{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; font-weight:750; font-size:15px;
+  padding:14px 22px; border-radius:12px;
+  background:var(--mint); color:var(--ink); text-decoration:none; white-space:nowrap;
+  transition:background .2s ease;
+}
+.button:hover{ background:#8ff5d6; }
+.cta{ background:linear-gradient(135deg,var(--ink),#1d2926); color:var(--paper); border-radius:22px; padding:38px 34px; margin:8px 0 0; }
+.cta .eyebrow{ margin-bottom:12px; }
+.cta h2{ color:var(--paper); font-size:29px; }
+.cta p{ color:rgba(238,242,240,.78); }
+.cta-price{ margin:18px 0 22px; }
+.cta-price strong{ font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; font-size:30px; color:var(--mint); }
+.small{ font-size:14px; opacity:.72; margin-top:15px; }
+
 footer{
   margin:80px -24px 0; padding:48px 24px 64px;
   background:var(--ink); color:rgba(238,242,240,0.72);
@@ -376,6 +403,11 @@ h2 svg *{ stroke:var(--teal); }
 </style>
 </head>
 <body>
+
+<div class="sticky-cta">
+  <span class="sticky-cta-brand">Карьерная калибровка</span>
+  <a class="button" href="https://t.me/Kalibrov_ka_bot?start=article1_sticky">Пройти калибровку</a>
+</div>
 
 <header class="hero grain">
   <div class="hero-inner">
@@ -565,6 +597,15 @@ h2 svg *{ stroke:var(--teal); }
   <p style="margin-top:26px">Часть решений о найме зависит от вещей, которые кандидат никогда не узнает: внутренняя политика компании, бюджет в моменте, совпадение с задачей, которая была актуальна именно сейчас. Профиль стоит держать в порядке - но не каждый отказ объясним</p>
 </section>
 
+<section class="cta reveal">
+  <p class="eyebrow">Дальше - калибровка</p>
+  <h2>Один диалог, чтобы увидеть разрыв до следующего отказа</h2>
+  <p>Разбор выше показывает общую логику решения. Калибровка - AI-диалог на 20 минут и персональный отчёт о том, где расходится именно ваша самопрезентация</p>
+  <p class="cta-price"><strong>1900 ₽</strong> для первых 5 человек, затем 2900 ₽</p>
+  <a class="button" href="https://t.me/Kalibrov_ka_bot?start=article1_final">Пройти калибровку</a>
+  <p class="small">Продукт даёт информацию, не оффер. Результат зависит от того, что вы сделаете с отчётом</p>
+</section>
+
 </main>
 
 <footer class="grain">
@@ -573,7 +614,6 @@ h2 svg *{ stroke:var(--teal); }
     <div>
       <p><strong>Вероника Малых.</strong> Больше 15 лет в подборе персонала: агентства, менеджер по подбору в крупной компании.</p>
       <p style="margin-top:10px">Пишу о том, как рынок читает специалистов и что видно нанимающему менеджеру, чего не видно вам: <a href="https://kariernay-kalibrovka.ru">kariernay-kalibrovka.ru</a></p>
-      <p style="margin-top:10px"><a href="https://t.me/Kalibrov_ka_bot?start=article_p4">Пройти калибровку в Telegram</a></p>
       <a class="back" href="index.html">&larr; на главную</a>
     </div>
   </div>
