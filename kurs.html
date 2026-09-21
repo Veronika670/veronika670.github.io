@@ -147,6 +147,26 @@ p{text-wrap:pretty}
 .mnote{margin-top:38px}
 .mnote .core{padding:26px 30px;font-size:16px;line-height:1.6;color:var(--t)}
 .mnote b{color:var(--terra-hi);font-weight:600}
+.steps.cmp li{font-size:17px;line-height:1.55;color:#3a3029}
+.steps.cmp li b{display:block;font-family:var(--f-head);font-weight:400;font-size:clamp(18px,1.6vw,22px);line-height:1.2;letter-spacing:-.02em;color:var(--k);margin-bottom:8px}
+.rt{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brick)}
+.rules{margin-top:40px}
+.rules .plist{margin-top:18px}
+.rules .plist li{color:#3a3029;font-size:16px}
+.zones{margin-top:clamp(64px,7vw,104px)}
+.zhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 40px;margin-bottom:26px}
+.zhead p{color:var(--k-mute);font-size:16px}
+.zgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.zgrid .core{display:flex;flex-direction:column;gap:14px;height:100%}
+.zn{font-family:var(--f-head);font-size:12px;letter-spacing:.06em;color:var(--brick)}
+.zgrid h3{font-size:clamp(19px,1.8vw,24px)}
+.zgrid p{font-size:16px;line-height:1.55;color:#3a3029}
+.zgrid .zl b{color:var(--brick);font-weight:600}
+.zgrid .zw{margin-top:auto;padding-top:14px;border-top:1px solid var(--line-l);font-size:14px;color:var(--k-mute)}
+.zfoot{margin-top:22px;font-size:15px;color:var(--k-mute);max-width:70ch}
+.cycle{list-style:none;counter-reset:c;margin-top:28px;display:grid;gap:12px}
+.cycle li{position:relative;padding-left:38px;font-size:15px;line-height:1.5;color:#3a3029}
+.cycle li:before{content:counter(c,decimal-leading-zero);counter-increment:c;position:absolute;left:0;top:3px;font-family:var(--f-head);font-size:12px;color:var(--brick)}
 
 /* ---------- программа ---------- */
 .prog{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(40px,7vw,120px);align-items:start}
@@ -306,7 +326,7 @@ footer .legal{margin-top:28px;padding-top:24px;box-shadow:inset 0 1px 0 var(--li
   .stage{padding-top:22px}
   .stage .phone{--pw:284px;transform:none}
   .hero .orb.o1{width:640px;height:640px;right:-260px;top:62%}
-  .split,.prog,.who,.about,.cta-in,footer .g,.quotes{grid-template-columns:1fr}
+  .split,.prog,.who,.about,.cta-in,footer .g,.quotes,.zgrid{grid-template-columns:1fr}
   .prog .stick{position:static}
   .how{grid-template-columns:1fr}
   .tf{grid-template-columns:1fr}
@@ -350,7 +370,7 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
   <div class="orb o1"></div><div class="orb o2"></div>
   <div class="wrap hero-grid">
     <div class="rv">
-      <span class="eyebrow">Мини-группа · первый поток · до 6 человек · 4 недели</span>
+      <span class="eyebrow">«Метод чужих глаз» · первый поток · до 6 человек · 4 недели</span>
       <h1>Тебя зовут на собеседования, а дальше - отказ без объяснений или оффер <em>ниже твоей цифры?</em></h1>
       <p class="lead">За 4 недели в маленькой группе ты узнаешь, как тебя слышит человек по ту сторону стола, пока ты рассказываешь о себе и называешь деньги, и научишься этим управлять. Тренируем вживую, я в роли той, кто принимает решение</p>
       <p class="pre">Начинается с калибровки: 20 минут диалога с AI и отчёт о твоих проблемных местах, ещё до первой встречи. Она входит в программу, обычно стоит 2 900 ₽</p>
@@ -456,19 +476,35 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
 <section class="sec l" id="metod">
   <div class="wrap split">
     <div class="rv">
-      <span class="eyebrow">Метод</span>
+      <span class="eyebrow">Авторский метод</span>
       <h2>«Метод чужих глаз»</h2>
-      <p class="lead" style="margin-top:28px">Ты видишь себя изнутри, а решение о тебе принимают снаружи. Между тем, что ты хотел сказать, и тем, что услышали, почти всегда есть расхождение - в нём и теряются офферы и деньги. Изнутри его не видно: к взгляду человека, который принимает решение, у кандидата просто нет доступа</p>
+      <p class="lead" style="margin-top:28px">Ты видишь себя изнутри, а решение о тебе принимают снаружи. Между тем, что ты хотел сказать, и тем, что услышали, почти всегда есть расхождение, и в нём теряются офферы и деньги. Изнутри его не видно: к взгляду того, кто принимает решение, у кандидата нет доступа</p>
+      <div class="rules">
+        <div class="rt">Три правила метода</div>
+        <ul class="plist">
+          <li>Советов «что улучшить» не будет: я возвращаю тебе взгляд нанимающего на твой рассказ, а что с этим делать, решаешь ты</li>
+          <li>Переписывать тебя в другого человека никто не станет: ты остаёшься собой, убираем только искажение</li>
+          <li>Оффер я не гарантирую. Гарантирую информацию: взгляд изнутри подбора, которого у тебя не было</li>
+        </ul>
+      </div>
     </div>
     <div class="rv" style="--dl:.1s">
-      <ol class="steps">
-        <li>говоришь так, как говоришь на собеседованиях сейчас, под запись</li>
-        <li>я рассказываю, что услышала как та, кто принимает решение, и какое решение приняла бы</li>
-        <li>находим место, где твои слова и мой вывод разошлись, - конкретное: слово, фраза, цифра</li>
-        <li>тренируем именно это место</li>
+      <ol class="steps cmp">
+        <li><div><b>Извлечение</b>Ты описываешь свой опыт и свою ценность так, как видишь их изнутри, своими словами. Без оценок и без советов</div></li>
+        <li><div><b>HR-считывание</b>К твоим словам применяется фильтр нанимающего: что он в них видит, что пропускает, где слышит неуверенность, а где сигнал «прошу меньше, чем стою»</div></li>
+        <li><div><b>Разрыв</b>Место, где твоё описание себя и чтение рынка разошлись. Отсюда отказ после интервью, оффер ниже или тишина после встречи</div></li>
+        <li><div><b>Карта</b>Адрес, а не совет: вот здесь ты одним словом обесценил три года опыта, и вот почему рынок читает это именно так</div></li>
       </ol>
-      <div class="bz mnote"><div class="core">Тот же метод стоит за AI-диалогом, с которого начинается курс: он находит твои места расхождения <b>заранее</b>, а на встречах мы работаем с ними вживую</div></div>
+      <div class="bz mnote"><div class="core">Первый проход всех четырёх шагов делает AI-диалог <b>ещё до первой встречи</b>, отчёт уже на руках. На встречах те же шаги проходим вживую, вслух и под давлением</div></div>
     </div>
+  </div>
+  <div class="wrap zones rv" style="--dl:.14s">
+    <div class="zhead"><div class="rt">Где именно теряются деньги</div><p>Разрыв всегда попадает в одну из трёх зон. Группа работает с двумя из них</p></div>
+    <div class="zgrid">
+      <div class="bz lt"><div class="core"><div class="zn">Зона 2</div><h3>Самопрезентация под давлением</h3><p>Как ты описываешь свою ценность в разговоре. Нанимающий слышит не только содержание: он слышит, веришь ли ты сам в то, что говоришь</p><p class="zl"><b>Потеря:</b> отказ после интервью или оффер ниже ожиданий</p><p class="zw">В курсе: недели 1, 2 и 4</p></div></div>
+      <div class="bz lt"><div class="core"><div class="zn">Зона 3</div><h3>Ценовая позиция</h3><p>Как ты называешь свою вилку и чем её держишь. Цифра без обоснования проигрывает в любую сторону: заниженную ты отдаёшь после первого «у нас бюджет меньше», завышенную не можешь объяснить</p><p class="zl"><b>Потеря:</b> деньги каждый месяц</p><p class="zw">В курсе: неделя 3, плюс полное собеседование недели 4</p></div></div>
+    </div>
+    <p class="zfoot">Зона 1, читаемость профиля до первого звонка, в эту группу не входит: работаем с тем, что происходит после приглашения. Калибровка на старте смотрит на все три</p>
   </div>
 </section>
 
@@ -478,7 +514,13 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
     <div class="stick rv">
       <span class="eyebrow">Программа</span>
       <h2>4 недели, 4 живые встречи по 60 минут</h2>
-      <p class="lead" style="margin-top:24px">На каждой встрече сначала показываю, как это выглядит изнутри подбора, потом каждый пробует сам, под запись, и я отвечаю так, как ответила бы кандидату, если бы могла говорить ему правду</p>
+      <p class="lead" style="margin-top:24px">На каждой встрече сначала показываю, как это выглядит изнутри подбора, потом каждый проходит один и тот же цикл</p>
+      <ol class="cycle">
+        <li>говоришь так, как говоришь на собеседованиях сейчас, под запись</li>
+        <li>я рассказываю, что услышала как та, кто принимает решение, и какое решение приняла бы</li>
+        <li>находим место, где твои слова и мой вывод разошлись: слово, фраза, цифра</li>
+        <li>тренируем именно это место</li>
+      </ol>
       <p class="pfoot">Между встречами - одно короткое задание под запись. Группа до 6 человек: на тренировке каждому нужно своё время</p>
     </div>
     <ol class="rows rv" style="--dl:.1s">
@@ -556,8 +598,9 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
     <div class="rv">
       <span class="eyebrow">При чём здесь психология</span>
       <h2>Что происходит с человеком, когда его оценивают</h2>
-      <p>К собеседованию обычно готовят технически: что сказать, как ответить на неудобный вопрос. А то, что происходит с человеком, когда его оценивают, остаётся в стороне - хотя с той стороны стола слышно в первую очередь это. Нанимающий слышит не только что ты говоришь, он слышит, веришь ли ты сам в то, что говоришь</p>
+      <p>К собеседованию обычно готовят технически: что сказать, как ответить на неудобный вопрос. А то, что происходит с человеком, когда его оценивают, остаётся в стороне - хотя с той стороны стола слышно в первую очередь это</p>
       <p>Я 15+ лет слушала кандидатов как та, кто принимает решение, а потом получила психологическое образование (годовая программа практикующего психолога, мультимодальный подход, 1200 часов). Опыт подбора даёт мне понимание, что именно я слышу, а психология объясняет, почему это звучит именно так</p>
+      <p>Чтобы услышать оба слоя, нужны две разные стороны опыта: решения о кандидатах изнутри подбора и психология. У меня сошлись обе</p>
       <ul class="plist">
         <li>разбираем, что происходит с голосом и речью, когда тебя оценивают</li>
         <li>смотрим, как усталость от долгого поиска слышна снаружи - без ярлыков и без оценок</li>
@@ -694,7 +737,7 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
 <footer>
   <div class="wrap">
     <div class="g">
-      <p>«Та сторона стола» · мини-группа по методу «Карьерная калибровка» · Вероника Малых · 15+ лет в подборе персонала</p>
+      <p>«Та сторона стола» · мини-группа по «Методу чужих глаз» · Вероника Малых · 15+ лет в подборе персонала</p>
       <div class="links"><span class="ph">Оферта</span><span class="ph">Политика персональных данных</span><span class="ph">Реквизиты</span><a href="https://t.me/Kalibrov_ka_bot?start=site_footer">Бот калибровки</a><a href="https://t.me/+e8Ew6oEjnp4yOWMy">Telegram-канал</a></div>
     </div>
     <p class="legal">Малых Вероника Николаевна, самозанятая (НПД), ИНН 500300041562 · © 2026</p>
