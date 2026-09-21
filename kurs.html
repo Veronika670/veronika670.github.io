@@ -218,6 +218,12 @@ p{text-wrap:pretty}
 .sc{list-style:none;border-top:1px solid var(--line-l);counter-reset:q}
 .sc li{counter-increment:q;padding:26px 0 26px 56px;border-bottom:1px solid var(--line-l);position:relative;font-size:clamp(18px,1.6vw,22px);line-height:1.45}
 .sc li:before{content:counter(q,decimal-leading-zero);position:absolute;left:0;top:30px;font-family:var(--f-head);font-size:13px;color:var(--brick)}
+.who-d{border-top:1px solid var(--line-d)}
+.who-d .sc,.who-d .sc li{border-color:var(--line-d)}
+.who-d .sc li{color:var(--t);font-size:clamp(19px,1.7vw,24px)}
+.who-d .sc li:before{color:var(--terra-hi)}
+.who-d .sc .hl{background:linear-gradient(transparent 62%,rgba(226,130,93,.55) 62%);color:#fff;padding:0 .08em}
+.who-d .bz.no{background:rgba(255,255,255,.05)}
 .no .core{padding:36px 32px;color:var(--t)}
 .no h3{margin-bottom:20px}
 .no ul{list-style:none;display:grid;gap:16px}
@@ -373,7 +379,7 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
       <span class="eyebrow">«Метод чужих глаз» · первый поток · до 6 человек · 4 недели</span>
       <h1>Тебя зовут на собеседования, а дальше - отказ без объяснений или оффер <em>ниже твоей цифры?</em></h1>
       <p class="lead">За 4 недели в маленькой группе ты узнаешь, как тебя слышит человек по ту сторону стола, пока ты рассказываешь о себе и называешь деньги, и научишься этим управлять. Тренируем вживую, я в роли той, кто принимает решение</p>
-      <p class="pre">Начинается с калибровки: 20 минут диалога с AI и отчёт о твоих проблемных местах, ещё до первой встречи. Она входит в программу, обычно стоит 2 900 ₽</p>
+      <p class="pre">Начинается с калибровки: 20 минут диалога с ИИ и отчёт о твоих проблемных местах, ещё до первой встречи. Она входит в программу, обычно стоит 2 900 ₽</p>
       <a class="btn" href="https://t.me/avtor_kariera_support" target="_blank" rel="noopener">Хочу на курс <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span></a>
       <p class="under">Старт 9 октября · встречи по вторникам, 19:00 МСК · заявки до 6 октября</p>
     </div>
@@ -495,7 +501,7 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
         <li><div><b>Разрыв</b>Место, где твоё описание себя и чтение рынка разошлись. Отсюда отказ после интервью, оффер ниже или тишина после встречи</div></li>
         <li><div><b>Карта</b>Адрес, а не совет: вот здесь ты одним словом обесценил три года опыта, и вот почему рынок читает это именно так</div></li>
       </ol>
-      <div class="bz mnote"><div class="core">Первый проход всех четырёх шагов делает AI-диалог <b>ещё до первой встречи</b>, отчёт уже на руках. На встречах те же шаги проходим вживую, вслух и под давлением</div></div>
+      <div class="bz mnote"><div class="core">Первый проход всех четырёх шагов делает ИИ-диалог <b>ещё до первой встречи</b>, отчёт уже на руках. На встречах те же шаги проходим вживую, вслух и под давлением</div></div>
     </div>
   </div>
   <div class="wrap zones rv" style="--dl:.14s">
@@ -524,7 +530,7 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
       <p class="pfoot">Между встречами - одно короткое задание под запись. Группа до 6 человек: на тренировке каждому нужно своё время</p>
     </div>
     <ol class="rows rv" style="--dl:.1s">
-      <li class="start"><div class="bz hot"><div class="core"><div><div class="wk">До первой встречи</div><div class="nm">Калибровка</div></div><div class="res">Отчёт о том, где рынок читает тебя иначе, чем ты сам себя видишь<small>20 минут диалога с AI, входит в программу (обычно 2 900 ₽)</small></div></div></div></li>
+      <li class="start"><div class="bz hot"><div class="core"><div><div class="wk">До первой встречи</div><div class="nm">Калибровка</div></div><div class="res">Отчёт о том, где рынок читает тебя иначе, чем ты сам себя видишь<small>20 минут диалога с ИИ, входит в программу (обычно 2 900 ₽)</small></div></div></div></li>
       <li><div><div class="wk">Неделя 1</div><div class="nm">Рассказ о себе</div></div><div class="res">Рассказываешь о себе за две минуты с задач и результатов, а не с университета, и знаешь, какое решение я бы приняла после этого рассказа</div></li>
       <li><div><div class="wk">Неделя 2</div><div class="nm">Неудобные вопросы</div></div><div class="res">Ответы про уход, перерыв и провал проговорены вслух, ты знаешь, что за каждым вопросом проверяют<small>Пробное собеседование со мной в роли нанимающей, с разбором</small></div></li>
       <li><div><div class="wk">Неделя 3</div><div class="nm">Цифра</div></div><div class="res">Цифра, которую ты можешь объяснить и не отдаёшь после первой фразы «у нас бюджет меньше»<small>Тренируем этот разговор вживую</small></div></li>
@@ -541,7 +547,7 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
       <h2>Всё, что нужно, чтобы услышать себя со стороны</h2>
     </div>
     <div class="bento">
-      <div class="bz hot b1 rv"><div class="core"><div class="bn">01</div><div><div class="bt">Карьерная калибровка</div><p class="bd">Обычно стоит 2 900 ₽, в программе входит в цену. 20 минут диалога с AI и персональный отчёт, с которого начинается курс</p></div></div></div>
+      <div class="bz hot b1 rv"><div class="core"><div class="bn">01</div><div><div class="bt">Карьерная калибровка</div><p class="bd">Обычно стоит 2 900 ₽, в программе входит в цену. 20 минут диалога с ИИ и персональный отчёт, с которого начинается курс</p></div></div></div>
       <div class="bz lt b2 rv" style="--dl:.06s"><div class="core"><div class="bn">02</div><div class="big">4 × 60</div><div><div class="bt">живые встречи по 60 минут</div><p class="bd">В группе до 6 человек</p></div></div></div>
       <div class="bz lt b3 rv" style="--dl:.1s"><div class="core"><div class="bn">03</div><div><div class="bt">Тренировка на каждой встрече</div><p class="bd">Со мной в роли нанимающей</p></div></div></div>
       <div class="bz lt b4 rv" style="--dl:.14s"><div class="core"><div class="bn">04</div><div class="bt">Две записи собеседования: до и после</div></div></div>
@@ -562,23 +568,24 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
     </div>
     <div class="how">
       <div class="bz rv"><div class="core"><div class="n">01</div><h3>Пишешь мне в Telegram</h3><p>Коротко поговорим, подойдёт ли тебе группа. Набор идёт лично, поэтому без формы</p></div></div>
-      <div class="bz mid rv" style="--dl:.08s"><div class="core"><div class="n">02</div><span class="free">входит в программу · обычно 2 900 ₽</span><h3>Проходишь калибровку</h3><p>20 минут диалога с AI в удобное время. Получаешь отчёт: где рынок читает тебя иначе, чем ты сам себя видишь. На первую встречу приходишь уже с ним</p></div></div>
+      <div class="bz mid rv" style="--dl:.08s"><div class="core"><div class="n">02</div><span class="free">входит в программу · обычно 2 900 ₽</span><h3>Проходишь калибровку</h3><p>20 минут диалога с ИИ в удобное время. Получаешь отчёт: где рынок читает тебя иначе, чем ты сам себя видишь. На первую встречу приходишь уже с ним</p></div></div>
       <div class="bz rv" style="--dl:.16s"><div class="core"><div class="n">03</div><h3>Четыре встречи</h3><p>Тренируемся под запись, с разбором. К последней неделе у тебя две записи собеседования и план дальше</p></div></div>
     </div>
   </div>
 </section>
 
 <!-- 7. ДЛЯ КОГО -->
-<section class="sec l" id="dlya-kogo">
+<section class="sec d who-d" id="dlya-kogo">
+  <div class="orb" style="width:820px;height:820px;right:-240px;top:50%;transform:translateY(-50%)"></div>
   <div class="wrap">
     <div class="head rv"><span class="eyebrow">Для кого</span><h2>Кому эта группа подойдёт</h2></div>
     <div class="who">
       <ul class="sc rv">
-        <li>тебя приглашают на собеседования, но после них приходит отказ или тишина, и ты не понимаешь, в чём ошибка</li>
-        <li>разговор прошёл тепло, вы «точно понравились друг другу», а решение - нет</li>
-        <li>оффер приходит ниже той цифры, которую ты называл, и ты соглашаешься</li>
-        <li>ты сильный специалист, пока работаешь, и теряешься, когда надо говорить о себе</li>
-        <li>ищешь уже не первый месяц, и усталость от поиска начинает быть слышна в голосе</li>
+        <li>тебя приглашают на собеседования, но после них приходит <span class="hl">отказ или тишина</span>, и ты не понимаешь, в чём ошибка</li>
+        <li>разговор прошёл тепло, вы «точно понравились друг другу», а <span class="hl">решение - нет</span></li>
+        <li>оффер приходит ниже той цифры, которую ты называл, и <span class="hl">ты соглашаешься</span></li>
+        <li>ты сильный специалист, пока работаешь, и <span class="hl">теряешься, когда надо говорить о себе</span></li>
+        <li>ищешь уже не первый месяц, и <span class="hl">усталость от поиска начинает быть слышна в голосе</span></li>
       </ul>
       <aside class="bz no rv" style="--dl:.1s"><div class="core">
         <h3>Кому не подойдёт</h3>
