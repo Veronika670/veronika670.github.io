@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
+<html lang="ru" class=" js"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Та сторона стола - мини-группа для собеседований</title>
-<meta name="description" content="Мини-группа до 6 человек, 4 недели: узнаешь, как тебя слышит человек, который принимает решение о найме, и научишься этим управлять. Ведёт Вероника Малых, 15+ лет в подборе">
+<meta name="description" content="Мини-группа до 6&nbsp;человек, 4&nbsp;недели: узнаешь, как тебя слышит человек, который принимает решение о найме, и научишься этим управлять. Ведёт Вероника Малых, 15+ лет в подборе">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#050506">
-<link href="/fonts.css" rel="stylesheet">
+<link href="fonts.css" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='39' fill='%23111614' stroke='%23e2825d' stroke-width='5'/%3E%3Ccircle cx='50' cy='50' r='8' fill='%23e2825d'/%3E%3C/svg%3E">
 <script>document.documentElement.className+=' js'</script>
 <style>
@@ -170,13 +169,13 @@ p{text-wrap:pretty}
 .prog{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(40px,7vw,120px);align-items:start}
 .prog .stick{position:sticky;top:110px}
 .rows{list-style:none;border-top:1px solid var(--line-l)}
-.rows li{display:grid;grid-template-columns:minmax(150px,.36fr) minmax(0,1fr);gap:8px clamp(20px,3vw,48px);padding:34px 0;border-bottom:1px solid var(--line-l);align-items:start}
+.rows li{display:grid;grid-template-columns:minmax(min(100%,250px),.45fr) minmax(0,1fr);gap:8px clamp(20px,3vw,48px);padding:34px 0;border-bottom:1px solid var(--line-l);align-items:start}
 .wk{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brick);margin-bottom:8px}
-.nm{font-family:var(--f-head);font-size:clamp(19px,1.8vw,24px);line-height:1.15;letter-spacing:-.03em}
+.nm{overflow-wrap:break-word;font-family:var(--f-head);font-size:clamp(19px,1.6vw,22px);line-height:1.15;letter-spacing:-.03em}
 .res{font-size:clamp(18px,1.5vw,20px);line-height:1.5}
 .res small{display:block;margin-top:10px;font-size:15px;color:var(--k-mute)}
 .rows li.start{border:0;padding:0;margin-bottom:22px;display:block}
-.rows li.start .core{display:grid;grid-template-columns:minmax(150px,.36fr) minmax(0,1fr);gap:8px clamp(20px,3vw,48px);align-items:start}
+.rows li.start .core{display:grid;grid-template-columns:minmax(min(100%,250px),.45fr) minmax(0,1fr);gap:8px clamp(20px,3vw,48px);align-items:start}
 .rows li.start .wk{color:#ffd9c4}
 .rows li.start .res small{color:rgba(255,244,234,.85)}
 .pfoot{margin-top:34px;font-size:16px;color:var(--k-mute);max-width:62ch}
@@ -355,16 +354,26 @@ footer .legal{margin-top:28px;padding-top:24px;box-shadow:inset 0 1px 0 var(--li
   .faq .a{padding-right:0}
 }
 footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;padding:12px 0}
+html{scroll-padding-top:96px}
 </style>
-</head>
+<style>
+/* Только компоновка изменённого наполнения; исходное оформление сохранено */
+.hero-author .core{padding:clamp(26px,3vw,46px)}
+.hero-author h2{font-size:clamp(27px,3vw,42px)}
+.hero-author p{margin-top:22px}
+.hero-author .nav-link{display:inline-block;margin-top:16px}
+.rail.two-examples{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px;margin-inline:auto}
+.rail.two-examples figure:nth-child(2){margin-top:0}
+.rail.two-examples .phone{--pw:300px}
+.tf.single-format{grid-template-columns:minmax(0,680px);justify-content:center}
+@media(max-width:900px){.rail.two-examples{max-width:100%;width:100%;margin-inline:0}.rail.two-examples .phone{--pw:264px}}
+</style></head>
 <body>
 
-<!-- Premium-версия страницы курса. Тексты: plans/2026-09-18_lending-mini-gruppa-teksty.md. noindex, не для холодного трафика.
-     До публикации: yurist (оферта на курс, согласие на запись, возврат), финальные даты -->
 
 <nav class="nav" aria-label="Навигация">
   <a class="brand" href="#top"><i></i>Та сторона стола</a>
-  <a class="go" href="#zapis">Хочу на курс</a>
+  <a class="go" href="#zapis">Хочу в группу</a>
 </nav>
 
 <main id="top">
@@ -373,45 +382,76 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
 <section class="sec d hero">
   <div class="orb o1"></div><div class="orb o2"></div>
   <div class="wrap hero-grid">
-    <div class="rv">
-      <span class="eyebrow">«Метод чужих глаз» · первый поток · до 6 человек · 4 недели</span>
-      <h1>Тебя зовут на собеседования, а дальше - отказ без объяснений или оффер <em>ниже твоей цифры?</em></h1>
-      <p class="lead">За 4 недели в маленькой группе ты узнаешь, как тебя слышит человек по ту сторону стола, пока ты рассказываешь о себе и называешь деньги, и научишься этим управлять. Тренируем вживую, я в роли той, кто принимает решение</p>
-      <p class="pre">Начинается с калибровки: 20 минут диалога с ИИ и отчёт о твоих проблемных местах, ещё до первой встречи. Она входит в программу, обычно стоит 2 900 ₽</p>
-      <a class="btn" href="#tarify">Хочу на курс <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span></a>
-      <p class="under">Старт 9 октября · встречи по вторникам, 19:00 МСК · заявки до 6 октября</p>
+    <div class="rv in">
+      <span class="eyebrow">«Метод чужих глаз» · первый поток · до 6&nbsp;человек · 4&nbsp;недели</span>
+      <h1>На собеседования зовут.<br>Как пройти дальше <em>и обсудить свою цифру?</em></h1>
+      <p class="lead">За 4 недели потренируем рассказ о себе, ответы на неудобные вопросы и разговор о деньгах. Я буду в роли нанимающей: объясню, что услышала, и разберу с тобой конкретные фразы</p>
+      <p class="pre">4 живые встречи по 60 минут · до 6 человек · 14 900 ₽</p>
+      <a class="btn" href="#tarify">Хочу в группу <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"></path></svg></span></a>
+      <p class="under">Старт 20&nbsp;октября · встречи по вторникам, 19:00 МСК · заявки до 16&nbsp;октября</p>
     </div>
-    <div class="stage rv" style="--dl:.12s" aria-label="Экран Telegram-бота калибровки">
-      <figure class="phone" id="hero-phone">
-        <div class="frame">
-          <div class="screen">
-            <span class="island"></span>
-            <div class="status"><span>9:41</span><i></i></div>
-            <div class="tg-head"><span class="tg-ava">К</span><div><div class="tg-name">Карьерная калибровка</div><div class="tg-sub">бот</div></div></div>
-            <div class="chat">
-              <div class="b"><p>За 20 минут посмотрим на тебя глазами того, кто принимает решение о найме</p><p>Разберём три вещи: как читается твой профиль до первого звонка, как ты звучишь, когда говоришь о себе под давлением, и что происходит с твоей цифрой, когда доходит до денег</p></div>
-              <div class="b"><p>Это не совет «подтянись» и не курс. Я показываю, как тебя читают снаружи, и где из-за этого ты теряешь в отклике и в деньгах</p></div>
-              <div class="b"><p>Специальной подготовки не нужно, отвечай как есть, правильных ответов тут нет. Начнём, когда будешь готов</p></div>
-            </div>
-            <div class="compose"><span>Сообщение</span><i></i></div>
-          </div>
-        </div>
-      </figure>
+    <aside class="bz rv hero-author"><div class="core">
+<span class="eyebrow">Курс ведёт</span><h2>Вероника Малых</h2>
+<p class="lead">15+ лет в подборе персонала, психологическое образование</p>
+<p>На встречах ты рассказываешь о себе и отвечаешь на вопросы. Я говорю, какое решение приняла бы после твоих ответов и почему</p>
+<p class="pre">Находим место, где твои слова и мой вывод разошлись, и тренируем его</p>
+<a class="nav-link" href="#programma">Посмотреть программу ↓</a>
+</div></aside>
+  </div>
+</section><section class="sec d who-d" id="dlya-kogo">
+  <div class="orb" style="width:820px;height:820px;right:-240px;top:50%;transform:translateY(-50%)"></div>
+  <div class="wrap">
+    <div class="head rv"><span class="eyebrow">Для кого</span><h2>Кому эта группа подойдёт</h2></div>
+    <div class="who">
+      <ul class="sc rv">
+        <li>тебя приглашают на собеседования, но после них приходит <span class="hl">отказ или тишина</span>, и ты не понимаешь, в чём ошибка</li>
+        <li>разговор прошёл тепло, вы «точно понравились друг другу», а <span class="hl">решение - нет</span></li>
+        <li>оффер приходит ниже той цифры, которую ты называл, и <span class="hl">ты соглашаешься</span></li>
+        <li>ты сильный специалист, пока работаешь, и <span class="hl">теряешься, когда надо говорить о себе</span></li>
+        <li>ищешь уже не первый месяц, и <span class="hl">усталость от поиска начинает быть слышна в голосе</span></li>
+      </ul>
+      <aside class="bz no rv" style="--dl:.1s"><div class="core">
+        <h3>Кому не подойдёт</h3>
+        <ul>
+          <li>тебя пока не зовут на собеседования совсем - это вопрос резюме и откликов, группа про следующий этап</li>
+          <li>ты ждёшь готовые фразы «что говорить» - заготовки у всех одинаковые, и с той стороны стола это слышно</li>
+          <li>тебе нужна гарантия, что возьмут</li>
+        </ul>
+      </div></aside>
     </div>
   </div>
-</section>
-
-<!-- 2. ДЕМО В ДЕЙСТВИИ -->
-<section class="sec d demo" id="demo" style="padding-top:clamp(60px,7vw,110px)">
+</section><section class="sec l2" id="programma">
+  <div class="wrap prog">
+    <div class="stick rv">
+      <span class="eyebrow">Программа</span>
+      <h2>4&nbsp;недели, 4 живые встречи по 60&nbsp;минут</h2>
+      <p class="lead" style="margin-top:24px">На каждой встрече сначала показываю, как это выглядит изнутри подбора, потом каждый проходит один и тот же цикл</p>
+      <ol class="cycle">
+        <li>говоришь так, как говоришь на собеседованиях сейчас, под запись</li>
+        <li>я рассказываю, что услышала как та, кто принимает решение, и какое решение приняла бы</li>
+        <li>находим место, где твои слова и мой вывод разошлись: слово, фраза, цифра</li>
+        <li>тренируем именно это место</li>
+      </ol>
+      <p class="pfoot">Между встречами - одно короткое задание под запись. Группа до 6&nbsp;человек: на тренировке каждому нужно своё время</p>
+    </div>
+    <ol class="rows rv" style="--dl:.1s">
+      <li class="start"><div class="bz hot"><div class="core"><div><div class="wk">До первой встречи</div><div class="nm">Калибровка</div></div><div class="res">Отчёт о том, где рынок читает тебя иначе, чем ты сам себя видишь<small>20&nbsp;минут диалога с ИИ, входит в программу (обычно 2&nbsp;900&nbsp;₽)</small></div></div></div></li>
+      <li><div><div class="wk">Неделя 1</div><div class="nm">Рассказ о себе</div></div><div class="res"><p class="week-pain">«Опыт есть, а когда просят рассказать о себе, начинаю перечислять места работы. Главное остаётся за кадром»</p><small>Тренируем двухминутный рассказ через твои задачи и результаты. Разбираем, что нанимающий услышал о твоём вкладе и что осталось непонятным</small></div></li>
+      <li><div><div class="wk">Неделя 2</div><div class="nm">Неудобные вопросы</div></div><div class="res"><p class="week-pain">«На вопросах про увольнение, перерыв или неудачу начинаю оправдываться, путаться или говорить лишнее»</p><small>Разбираем, что проверяют этими вопросами. Проговариваем ответы на твоих ситуациях и смотрим, какое впечатление они оставляют</small></div></li>
+      <li><div><div class="wk">Неделя 3</div><div class="nm">Разговор о деньгах</div></div><div class="res"><p class="week-pain">«Боюсь назвать желаемую сумму. А после «у нас бюджет меньше» сразу готов уступить»</p><small>Тренируем, как назвать свою цифру, объяснить её через опыт и задачи и продолжить разговор после возражения</small></div></li>
+      <li><div><div class="wk">Неделя 4</div><div class="nm">Полное собеседование</div></div><div class="res"><p class="week-pain">«Отдельные ответы подготовил, но смогу ли использовать их, когда вопросы идут подряд и я волнуюсь?»</p><small>Проходим полное собеседование под запись. Сравниваем с первой записью: что изменилось, где ещё теряешься и что потренировать перед следующей встречей с работодателем</small></div></li>
+    </ol>
+  </div>
+</section><section class="sec d demo" id="demo" style="padding-top:clamp(60px,7vw,110px)">
   <div class="orb"></div>
   <div class="wrap">
     <div class="head rv">
-      <span class="eyebrow">Демо в действии</span>
-      <h2>С этого начинается курс: диалог в Telegram и отчёт на руках</h2>
-      <p class="lead">Так выглядит калибровка, первый шаг курса. Ты отвечаешь на вопросы, а бот показывает, как тебя читают снаружи</p>
+      <span class="eyebrow">Подготовка к первой встрече</span>
+      <h2>Сначала узнаешь, что стоит потренировать</h2>
+      <p class="lead">Перед первой встречей проходишь калибровку: 20 минут диалога с ИИ в Telegram и отчёт о твоих проблемных местах. Она входит в стоимость программы, отдельно стоит 2 900 ₽</p>
     </div>
 
-    <div class="rail rv">
+    <div class="rail rv two-examples">
       <figure>
         <div class="phone" id="demo-1"><div class="frame"><div class="screen">
           <span class="island"></span><div class="status"><span>9:41</span><i></i></div>
@@ -440,41 +480,21 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
         <figcaption><div class="cn">02</div><div class="ct">Точка потери</div><div class="cd">Первый пункт отчёта: где именно рынок читает тебя иначе, чем ты себя</div></figcaption>
       </figure>
 
-      <figure>
-        <div class="phone" id="demo-3"><div class="frame"><div class="screen">
-          <span class="island"></span><div class="status"><span>9:41</span><i></i></div>
-          <div class="tg-head"><span class="tg-ava">К</span><div><div class="tg-name">Карьерная калибровка</div><div class="tg-sub">бот</div></div></div>
-          <div class="chat">
-            <span class="ex">пример · данные вымышлены</span>
-            <div class="b"><span class="tag">3 · Аргумент цены</span><p>Готовая формулировка для разговора о деньгах, собранная из твоих слов в диалоге</p><p><span class="hl">«Цифру называю я и объясняю, из чего она складывается: я лично веду закрытие месяца и отвечаю за результат. Состав предложения готов обсуждать, саму цифру - после того, как мы поймём объём задач»</span></p></div>
-          </div>
-          <div class="compose"><span>Сообщение</span><i></i></div>
-        </div></div></div>
-        <figcaption><div class="cn">03</div><div class="ct">Аргумент цены</div><div class="cd">Формулировка для переговоров, построенная на твоих же словах, а не общий шаблон</div></figcaption>
-      </figure>
+      
 
-      <figure>
-        <div class="phone" id="demo-4"><div class="frame"><div class="screen">
-          <span class="island"></span><div class="status"><span>9:41</span><i></i></div>
-          <div class="tg-head"><span class="tg-ava">К</span><div><div class="tg-name">Карьерная калибровка</div><div class="tg-sub">бот</div></div></div>
-          <div class="chat">
-            <span class="ex">пример · данные вымышлены</span>
-            <div class="b"><span class="tag">4 · Один шаг</span><p>В ближайшие 48 часов: перепиши последнее достижение от первого лица - не «команда сделала», а <span class="hl">«я принял решение X, это привело к Y»</span></p></div>
-            <div class="b"><p>Прошло пару дней с отчёта. Как прошло с тем одним шагом?</p></div>
-          </div>
-          <div class="compose"><span>Сообщение</span><i></i></div>
-        </div></div></div>
-        <figcaption><div class="cn">04</div><div class="ct">Один шаг на 48 часов</div><div class="cd">Не список советов, а одно действие, и бот потом спрашивает, как прошло</div></figcaption>
-      </figure>
+      
     </div>
 
     <div class="dfoot rv">
-      <span><b>Диалог:</b> 20 минут, в удобное время</span>
+      <span><b>Диалог:</b> 20&nbsp;минут, в удобное время</span>
       <span><b>Отчёт:</b> в том же чате, сразу после диалога</span>
-      <span><b>В курсе:</b> входит в программу (обычно стоит 2 900 ₽)</span>
+      <span><b>В программе:</b> входит в программу (обычно стоит 2&nbsp;900&nbsp;₽)</span>
     </div>
   </div>
 </section>
+
+<!-- 2. ДЕМО В ДЕЙСТВИИ -->
+
 
 <!-- 3. МЕТОД -->
 <section class="sec l" id="metod">
@@ -482,7 +502,7 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
     <div class="rv">
       <span class="eyebrow">Авторский метод</span>
       <h2>«Метод чужих глаз»</h2>
-      <p class="lead" style="margin-top:28px">Ты видишь себя изнутри, а решение о тебе принимают снаружи. Между тем, что ты хотел сказать, и тем, что услышали, почти всегда есть расхождение, и в нём теряются офферы и деньги. Изнутри его не видно: к взгляду того, кто принимает решение, у кандидата нет доступа</p>
+      <p class="lead" style="margin-top:28px">Ты рассказываешь о своём опыте, а я объясняю, как этот рассказ слышит нанимающий. Находим расхождение между тем, что ты хотел сказать, и тем, что услышала я</p>
       <div class="rules">
         <div class="rt">Три правила метода</div>
         <ul class="plist">
@@ -505,37 +525,15 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
   <div class="wrap zones rv" style="--dl:.14s">
     <div class="zhead"><div class="rt">Где именно теряются деньги</div><p>Разрыв всегда попадает в одну из трёх зон. Группа работает с двумя из них</p></div>
     <div class="zgrid">
-      <div class="bz lt"><div class="core"><div class="zn">Зона 2</div><h3>Самопрезентация под давлением</h3><p>Как ты описываешь свою ценность в разговоре. Нанимающий слышит не только содержание: он слышит, веришь ли ты сам в то, что говоришь</p><p class="zl"><b>Потеря:</b> отказ после интервью или оффер ниже ожиданий</p><p class="zw">В курсе: недели 1, 2 и 4</p></div></div>
-      <div class="bz lt"><div class="core"><div class="zn">Зона 3</div><h3>Ценовая позиция</h3><p>Как ты называешь свою вилку и чем её держишь. Цифра без обоснования проигрывает в любую сторону: заниженную ты отдаёшь после первого «у нас бюджет меньше», завышенную не можешь объяснить</p><p class="zl"><b>Потеря:</b> деньги каждый месяц</p><p class="zw">В курсе: неделя 3, плюс полное собеседование недели 4</p></div></div>
+      <div class="bz lt"><div class="core"><div class="zn">Зона 2</div><h3>Самопрезентация под давлением</h3><p>Как ты описываешь свою ценность в разговоре. Нанимающий слышит не только содержание: он слышит, веришь ли ты сам в то, что говоришь</p><p class="zl"><b>Потеря:</b> отказ после интервью или оффер ниже ожиданий</p><p class="zw">В программе: недели 1, 2 и 4</p></div></div>
+      <div class="bz lt"><div class="core"><div class="zn">Зона 3</div><h3>Ценовая позиция</h3><p>Как ты называешь свою вилку и чем её держишь. Цифра без обоснования проигрывает в любую сторону: заниженную ты отдаёшь после первого «у нас бюджет меньше», завышенную не можешь объяснить</p><p class="zl"><b>Потеря:</b> деньги каждый месяц</p><p class="zw">В программе: неделя 3, плюс полное собеседование недели 4</p></div></div>
     </div>
     <p class="zfoot">Зона 1, читаемость профиля до первого звонка, в эту группу не входит: работаем с тем, что происходит после приглашения. Калибровка на старте смотрит на все три</p>
   </div>
 </section>
 
 <!-- 4. ПРОГРАММА -->
-<section class="sec l2" id="programma">
-  <div class="wrap prog">
-    <div class="stick rv">
-      <span class="eyebrow">Программа</span>
-      <h2>4 недели, 4 живые встречи по 60 минут</h2>
-      <p class="lead" style="margin-top:24px">На каждой встрече сначала показываю, как это выглядит изнутри подбора, потом каждый проходит один и тот же цикл</p>
-      <ol class="cycle">
-        <li>говоришь так, как говоришь на собеседованиях сейчас, под запись</li>
-        <li>я рассказываю, что услышала как та, кто принимает решение, и какое решение приняла бы</li>
-        <li>находим место, где твои слова и мой вывод разошлись: слово, фраза, цифра</li>
-        <li>тренируем именно это место</li>
-      </ol>
-      <p class="pfoot">Между встречами - одно короткое задание под запись. Группа до 6 человек: на тренировке каждому нужно своё время</p>
-    </div>
-    <ol class="rows rv" style="--dl:.1s">
-      <li class="start"><div class="bz hot"><div class="core"><div><div class="wk">До первой встречи</div><div class="nm">Калибровка</div></div><div class="res">Отчёт о том, где рынок читает тебя иначе, чем ты сам себя видишь<small>20 минут диалога с ИИ, входит в программу (обычно 2 900 ₽)</small></div></div></div></li>
-      <li><div><div class="wk">Неделя 1</div><div class="nm">Рассказ о себе</div></div><div class="res">Рассказываешь о себе за две минуты с задач и результатов, а не с университета, и знаешь, какое решение я бы приняла после этого рассказа</div></li>
-      <li><div><div class="wk">Неделя 2</div><div class="nm">Неудобные вопросы</div></div><div class="res">Ответы про уход, перерыв и провал проговорены вслух, ты знаешь, что за каждым вопросом проверяют<small>Пробное собеседование со мной в роли нанимающей, с разбором</small></div></li>
-      <li><div><div class="wk">Неделя 3</div><div class="nm">Цифра</div></div><div class="res">Цифра, которую ты можешь объяснить и не отдаёшь после первой фразы «у нас бюджет меньше»<small>Тренируем этот разговор вживую</small></div></li>
-      <li><div><div class="wk">Неделя 4</div><div class="nm">Полное собеседование</div></div><div class="res">Две записи, первой недели и последней, и разницу слышно тебе самому<small>Плюс план на ближайшие собеседования</small></div></li>
-    </ol>
-  </div>
-</section>
+
 
 <!-- 5. ЧТО ВХОДИТ -->
 <section class="sec l" id="vhodit">
@@ -545,13 +543,13 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
       <h2>Всё, что нужно, чтобы услышать себя со стороны</h2>
     </div>
     <div class="bento">
-      <div class="bz hot b1 rv"><div class="core"><div class="bn">01</div><div><div class="bt">Карьерная калибровка</div><p class="bd">Обычно стоит 2 900 ₽, в программе входит в цену. 20 минут диалога с ИИ и персональный отчёт, с которого начинается курс</p></div></div></div>
-      <div class="bz lt b2 rv" style="--dl:.06s"><div class="core"><div class="bn">02</div><div class="big">4 × 60</div><div><div class="bt">живые встречи по 60 минут</div><p class="bd">В группе до 6 человек</p></div></div></div>
+      <div class="bz hot b1 rv"><div class="core"><div class="bn">01</div><div><div class="bt">Карьерная калибровка</div><p class="bd">Обычно стоит 2&nbsp;900&nbsp;₽, в программе входит в цену. 20&nbsp;минут диалога с ИИ и персональный отчёт, с которого начинается программа</p></div></div></div>
+      <div class="bz lt b2 rv" style="--dl:.06s"><div class="core"><div class="bn">02</div><div class="big">4 × 60</div><div><div class="bt">живые встречи по 60&nbsp;минут</div><p class="bd">В группе до 6&nbsp;человек</p></div></div></div>
       <div class="bz lt b3 rv" style="--dl:.1s"><div class="core"><div class="bn">03</div><div><div class="bt">Тренировка на каждой встрече</div><p class="bd">Со мной в роли нанимающей</p></div></div></div>
       <div class="bz lt b4 rv" style="--dl:.14s"><div class="core"><div class="bn">04</div><div class="bt">Две записи собеседования: до и после</div></div></div>
       <div class="bz lt b5 rv"><div class="core"><div class="bn">05</div><div class="bt">Разбор в формате «вот что я услышала и вот какое решение приняла бы»</div></div></div>
       <div class="bz lt b6 rv" style="--dl:.06s"><div class="core"><div class="bn">06</div><div class="bt">Короткие задания между встречами</div></div></div>
-      <div class="bz lt b7 rv" style="--dl:.1s"><div class="core"><div class="bn">07</div><div class="bt">Чат группы на время курса</div></div></div>
+      <div class="bz lt b7 rv" style="--dl:.1s"><div class="core"><div class="bn">07</div><div class="bt">Чат группы на время программы</div></div></div>
     </div>
   </div>
 </section>
@@ -562,40 +560,18 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
   <div class="wrap">
     <div class="head rv">
       <span class="eyebrow">Как это работает</span>
-      <h2>Три шага от заявки до первой встречи</h2>
+      <h2>Три шага от оплаты до первой встречи</h2>
     </div>
     <div class="how">
-      <div class="bz rv"><div class="core"><div class="n">01</div><h3>Пишешь мне в Telegram</h3><p>Коротко поговорим, подойдёт ли тебе группа. Набор идёт лично, поэтому без формы</p></div></div>
-      <div class="bz mid rv" style="--dl:.08s"><div class="core"><div class="n">02</div><span class="free">входит в программу · обычно 2 900 ₽</span><h3>Проходишь калибровку</h3><p>20 минут диалога с ИИ в удобное время. Получаешь отчёт: где рынок читает тебя иначе, чем ты сам себя видишь. На первую встречу приходишь уже с ним</p></div></div>
-      <div class="bz rv" style="--dl:.16s"><div class="core"><div class="n">03</div><h3>Четыре встречи</h3><p>Тренируемся под запись, с разбором. К последней неделе у тебя две записи собеседования и план дальше</p></div></div>
+      <div class="bz rv"><div class="core"><div class="n">01</div><h3>Оплачиваешь место на сайте</h3><p>Кнопка «Купить» ведёт на страницу оплаты ЮKassa, платишь картой. После оплаты пишешь мне в Telegram: пришлю условия участия и попрошу два коротких согласия, на запись встреч и на обработку данных. После них - ссылка на калибровку и чат группы</p></div></div>
+      <div class="bz rv" style="--dl:.08s"><div class="core"><div class="n">02</div><span class="free">входит в программу · обычно 2&nbsp;900&nbsp;₽</span><h3>Проходишь калибровку</h3><p>20&nbsp;минут диалога с ИИ в удобное время. Получаешь отчёт: где рынок читает тебя иначе, чем ты сам себя видишь. На первую встречу приходишь уже с ним</p></div></div>
+      <div class="bz rv mid" style="--dl:.16s"><div class="core"><div class="n">03</div><h3>Четыре встречи</h3><p>Тренируемся под запись, с разбором. К последней неделе у тебя две записи собеседования и план дальше</p></div></div>
     </div>
   </div>
 </section>
 
 <!-- 7. ДЛЯ КОГО -->
-<section class="sec d who-d" id="dlya-kogo">
-  <div class="orb" style="width:820px;height:820px;right:-240px;top:50%;transform:translateY(-50%)"></div>
-  <div class="wrap">
-    <div class="head rv"><span class="eyebrow">Для кого</span><h2>Кому эта группа подойдёт</h2></div>
-    <div class="who">
-      <ul class="sc rv">
-        <li>тебя приглашают на собеседования, но после них приходит <span class="hl">отказ или тишина</span>, и ты не понимаешь, в чём ошибка</li>
-        <li>разговор прошёл тепло, вы «точно понравились друг другу», а <span class="hl">решение - нет</span></li>
-        <li>оффер приходит ниже той цифры, которую ты называл, и <span class="hl">ты соглашаешься</span></li>
-        <li>ты сильный специалист, пока работаешь, и <span class="hl">теряешься, когда надо говорить о себе</span></li>
-        <li>ищешь уже не первый месяц, и <span class="hl">усталость от поиска начинает быть слышна в голосе</span></li>
-      </ul>
-      <aside class="bz no rv" style="--dl:.1s"><div class="core">
-        <h3>Кому не подойдёт</h3>
-        <ul>
-          <li>тебя пока не зовут на собеседования совсем - это вопрос резюме и откликов, группа про следующий этап</li>
-          <li>ты ждёшь готовые фразы «что говорить» - заготовки у всех одинаковые, и с той стороны стола это слышно</li>
-          <li>тебе нужна гарантия, что возьмут</li>
-        </ul>
-      </div></aside>
-    </div>
-  </div>
-</section>
+
 
 <!-- 8. ПСИХОЛОГИЯ + АВТОР -->
 <section class="sec l2" id="avtor">
@@ -603,9 +579,9 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
     <div class="rv">
       <span class="eyebrow">При чём здесь психология</span>
       <h2>Что происходит с человеком, когда его оценивают</h2>
-      <p>К собеседованию обычно готовят технически: что сказать, как ответить на неудобный вопрос. А то, что происходит с человеком, когда его оценивают, остаётся в стороне - хотя с той стороны стола слышно в первую очередь это</p>
-      <p>Я 15+ лет слушала кандидатов как та, кто принимает решение, а потом получила психологическое образование (годовая программа практикующего психолога, мультимодальный подход, 1200 часов). Опыт подбора даёт мне понимание, что именно я слышу, а психология объясняет, почему это звучит именно так</p>
-      <p>Чтобы услышать оба слоя, нужны две разные стороны опыта: решения о кандидатах изнутри подбора и психология. У меня сошлись обе</p>
+      <p>На собеседовании важно не только содержание ответа. Когда тебя оценивают, напряжение и усталость могут менять то, как ты говоришь о своём опыте и о деньгах</p>
+      <p>Опыт подбора помогает мне услышать это со стороны нанимающего, а психологическое образование - объяснить бережно и понятно</p>
+      
       <ul class="plist">
         <li>разбираем, что происходит с голосом и речью, когда тебя оценивают</li>
         <li>смотрим, как усталость от долгого поиска слышна снаружи - без ярлыков и без оценок</li>
@@ -618,22 +594,22 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
       <span class="eyebrow">Кто ведёт</span>
       <h2>Вероника Малых</h2>
       <p>15+ лет в подборе: подбирала специалистов по управлению персоналом, юристов, банкиров, сама отказывала кандидатам и сама выводила их на офферы</p>
-      <p>Самый частый вопрос, который мне задавали после отказа: почему? И я годами не могла дать внятного ответа. Иногда обратную связь не давали даже мне, рекрутеру, - либо говорили просто не то. Иногда причина чувствовалась интуитивно - и мной, и нанимающим, - но словами её не мог изложить никто. А иногда причину называли такую, которую я не могла передать кандидату</p>
-      <p>Кандидат в это время оставался со стандартным «мы вам позвоним»</p>
+      <p>После отказов кандидаты спрашивали меня: почему? Иногда причину не объясняли даже рекрутеру. Иногда её чувствовали интуитивно, но не могли выразить словами</p>
+      
       <p>Потом я пошла учиться на практикующего психолога, и две части соединились: я вижу, где человек проседает в подаче своего опыта, могу перевести причину отказа в слова - и сказать её бережно</p>
       <p class="pull">Потому что правда в лоб не помогает. Помогает правда, после которой понятно, что делать дальше</p>
     </div>
   </div>
 </section>
 
-<!-- 9. КЕЙСЫ «БЫЛО → СТАЛО» + ОТЗЫВЫ (только реальные формулировки) -->
+<!-- 9. КЕЙСЫ «БЫЛО → СТАЛО» + ОТЗЫВЫ -->
 <section class="sec d" id="keysy">
   <div class="orb" style="width:1000px;height:700px;left:-260px;top:10%"></div>
   <div class="wrap">
     <div class="head rv">
       <span class="eyebrow">Было → стало</span>
       <h2>Как это выглядит на&nbsp;реальных&nbsp;формулировках</h2>
-      <p class="lead">Кейсов участников группы пока нет: группу я собираю впервые. Ниже формулировки из моей работы до курса, с честной подписью, откуда каждая</p>
+      <p class="lead">Кейсов участников группы пока нет: группу я собираю впервые. Ниже формулировки из моей работы до программы, с честной подписью, откуда каждая</p>
     </div>
 
     <div class="cases">
@@ -641,7 +617,7 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
         <div class="src">Клиентка индивидуальной тренировки собеседования · апрель 2026</div>
         <div class="ba">
           <div class="was"><div class="lab">Было</div>«после длительного перерыва в работе»</div>
-          <div class="mid"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></div>
+          <div class="mid"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"></path></svg></div>
           <div class="now"><div class="lab">Стало</div>«я поняла как отвечать на сложные вопросы, и в итоге, в течение двух недель после этого <span class="hl">вышла на новую руководящую должность</span>»</div>
         </div>
         <div class="note">Слова клиентки из её сообщения, без правок. Отзыв целиком - ниже</div>
@@ -651,7 +627,7 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
         <div class="src">Реальный прогон калибровки, обезличено</div>
         <div class="ba">
           <div class="was"><div class="lab">Было</div>«собрала команду», «перестроила». А когда услышала цифру вдвое ниже: «Нужны деньги»</div>
-          <div class="mid"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></div>
+          <div class="mid"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"></path></svg></div>
           <div class="now"><div class="lab">Стало в отчёте</div>«Я пересобрала воронку найма под реальные требования рынка - <span class="hl">это сократило срок закрытия вакансий на треть</span>»</div>
         </div>
         <div class="note">Формулировки из отчёта. Узнаваемые детали изменены. Результат применения пока не измерен, это не итог поиска работы</div>
@@ -665,7 +641,7 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
       <figure class="bz q rv"><div class="core">
         <div class="qm" aria-hidden="true">«</div>
         <blockquote>Вероника устроила меня на работу после длительного перерыва в работе, все было сделано оперативно, мы прошли тренировку собеседования, я поняла как отвечать на сложные вопросы, и в итоге, в течение двух недель после этого <span class="hl">вышла на новую руководящую должность</span></blockquote>
-        <figcaption class="who2"><b>Клиентка индивидуальной тренировки собеседования</b><span class="chip">отзыв до курса, индивидуальная работа</span></figcaption>
+        <figcaption class="who2"><b>Клиентка индивидуальной тренировки собеседования</b><span class="chip">отзыв до программы, индивидуальная работа</span></figcaption>
       </div></figure>
       <figure class="bz q rv" style="--dl:.1s"><div class="core">
         <div class="qm" aria-hidden="true">«</div>
@@ -673,7 +649,7 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
         <figcaption class="who2"><b>Ксения Сокольникова · @ksuusokol</b><span class="chip">о калибровке · тестер бесплатного демо-прогона</span></figcaption>
       </div></figure>
     </div>
-    <p class="rnote rv">Отзывы участников группы появятся после первого потока. Цена первого потока 14 900 ₽, а встречи записываются - с твоего согласия и только для разбора внутри группы</p>
+    <p class="rnote rv">Отзывы участников группы появятся после первого потока. Цена первого потока 14&nbsp;900&nbsp;₽, а встречи записываются - с твоего согласия и только для разбора внутри группы</p>
   </div>
 </section>
 
@@ -681,23 +657,23 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
 <section class="sec l" id="tarify">
   <div class="wrap">
     <div class="head rv"><span class="eyebrow">Формат участия</span><h2>Сейчас идёт набор в мини-группу</h2></div>
-    <div class="tf">
-      <div class="ghost rv"><span class="tchip">после первого потока</span><h3>Самостоятельно</h3><p>Появится, когда пройдёт первый поток</p></div>
+    <div class="tf single-format">
+      
       <div class="bz mainc rv" style="--dl:.08s"><div class="core">
         <span class="tchip">идёт набор</span>
-        <h3>С группой</h3>
-        <div class="price">14 900 ₽<small>за место, первый поток</small></div>
+        <h3>Мини-группа с Вероникой</h3>
+        <div class="price">14&nbsp;900&nbsp;₽<small>за место, первый поток</small></div>
         <ul>
-          <li>Калибровка перед стартом входит в программу (обычно 2 900 ₽)</li>
-          <li>4 живые встречи по 60 минут</li>
+          <li>Калибровка перед стартом входит в программу (обычно 2&nbsp;900&nbsp;₽)</li>
+          <li>4 живые встречи по 60&nbsp;минут</li>
           <li>Тренировки под запись с разбором</li>
           <li>Две записи твоего собеседования</li>
-          <li>Чат группы на время курса</li>
+          <li>Чат группы на время программы</li>
           <li>Мест: до 6</li>
         </ul>
-        <a class="btn" href="https://yookassa.ru/my/i/araMM7p6LnUp/l" target="_blank" rel="noopener">Купить за 14&nbsp;900&nbsp;₽ <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span></a>
+        <a class="btn" href="https://yookassa.ru/my/i/araMM7p6LnUp/l" target="_blank" rel="noopener">Купить за 14&nbsp;900&nbsp;₽ <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"></path></svg></span></a>
       </div></div>
-      <div class="ghost rv" style="--dl:.16s"><span class="tchip">после первого потока</span><h3>Лично</h3><p>Появится, когда пройдёт первый поток</p></div>
+      
     </div>
   </div>
 </section>
@@ -708,15 +684,13 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
     <div class="head rv"><span class="eyebrow">Вопросы</span><h2>Частые вопросы</h2></div>
     <div class="faq rv">
       <details><summary>Меня пока не зовут на собеседования. Мне подойдёт?</summary><p class="a">Пока нет. Группа про то, что происходит после приглашения. Если приглашений нет - это вопрос резюме и откликов, с него и лучше начать</p></details>
-      <details><summary>Я не люблю выступать перед людьми, а тут группа и запись</summary><p class="a">Группа маленькая, до 6 человек, и все в ней в одинаковом положении. Запись нужна тебе самому - чтобы услышать себя со стороны. Дальше группы она не уходит</p></details>
+      <details><summary>Я не люблю выступать перед людьми, а тут группа и запись</summary><p class="a">Группа маленькая, до 6&nbsp;человек, и все в ней в одинаковом положении. Запись нужна тебе самому - чтобы услышать себя со стороны. Дальше группы она не уходит. Показать фрагмент в моих материалах я могу только если ты отдельно разрешишь: это необязательное согласие, на участие и цену оно не влияет</p></details>
       <details><summary>Ты скажешь мне, что говорить на собеседовании?</summary><p class="a">Готовых текстов не дам. Заготовки у всех одинаковые, и с той стороны это слышно. Я покажу, как твои слова слышит тот, кто принимает решение, а формулировки ты соберёшь свои</p></details>
       <details><summary>Это психологическая группа? Будем разбирать мои проблемы?</summary><p class="a">Нет, это не психотерапия и не группа поддержки. Психологическое образование помогает мне заметить, что происходит с твоей речью, когда тебя оценивают, и сказать об этом так, чтобы было не обидно. Разбираем только то, как ты говоришь о своём опыте и о деньгах</p></details>
-      <details><summary>Почему 14 900 ₽?</summary><p class="a">В цену входят четыре живые встречи по 60 минут в группе до 6 человек, где у каждого своё время на тренировку и мой разбор, две записи твоего собеседования, короткие задания между встречами, чат группы и калибровка, которая обычно стоит 2 900 ₽. Это цена первого потока</p></details>
+      <details><summary>Почему 14&nbsp;900&nbsp;₽?</summary><p class="a">В цену входят четыре живые встречи по 60&nbsp;минут в группе до 6&nbsp;человек, где у каждого своё время на тренировку и мой разбор, две записи твоего собеседования, короткие задания между встречами, чат группы и калибровка, которая обычно стоит 2&nbsp;900&nbsp;₽. Это цена первого потока</p></details>
       <details><summary>Ты гарантируешь оффер?</summary><p class="a">Нет. Обещать результат было бы неправдой, слишком много факторов вне контроля. Помогу снизить неопределённость и дам инструменты: ты поймёшь, как тебя слышат, и потренируешь это вживую</p></details>
-      <!-- ответ про другую сферу: вторая фраза (про уровни зарплат) убрана, ждёт формулировку автора -->
       <details><summary>Я в другой сфере, не в той, где ты подбирала</summary><p class="a">На каждый товар есть свой покупатель - и то, как человек говорит о себе и о деньгах, слышно одинаково в любой сфере</p></details>
-      <!-- ответ про возврат: законный максимум по ст. 32 ЗоЗПП, утверждён автором 21.09; официально закрепить в оферте на курс -->
-      <details><summary>Что если пойму, что мне не подходит?</summary><p class="a">Отказаться можно в любой момент. До старта потока возвращаю оплату целиком за вычетом расходов, которые смогу подтвердить. После старта - за встречи, которые ещё не прошли, тоже за вычетом подтверждённых расходов. Так требует закон, и так честно. Поэтому до оплаты мы коротко поговорим, подойдёт ли тебе группа</p></details>
+      <details><summary>Что если пойму, что мне не подходит?</summary><p class="a">Отказаться можно в любой момент, написав мне в Telegram. До первой встречи возвращаю всё, что ты заплатил, за вычетом расходов, которые смогу подтвердить; если калибровка уже пройдена и отчёт выдан, удерживаю её стоимость 2&nbsp;900&nbsp;₽. После старта возвращаю за встречи, которые ещё не прошли: одна встреча считается как 25% цены, 3&nbsp;725&nbsp;₽. Так требует закон, и так честно. Расчёт с примером - в <a href="kurs-legal.html#vozvrat">условиях участия, раздел 2</a></p></details>
     </div>
   </div>
 </section>
@@ -726,24 +700,23 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
   <div class="orb"></div>
   <div class="wrap cta-in">
     <div class="rv">
-      <h2>В группе до 6 мест</h2>
-      <p class="lead">Старт 9 октября. Заявки принимаю до 6 октября или пока есть места: в группе до 6 человек, иначе на тренировке не хватит времени на каждого</p>
+      <h2>В группе до 6&nbsp;мест</h2>
+      <p class="lead">Старт 20&nbsp;октября. Заявки принимаю до 16&nbsp;октября или пока есть места: в группе до 6&nbsp;человек, иначе на тренировке не хватит времени на каждого</p>
     </div>
     <div class="cta-act rv" style="--dl:.1s">
-      <a class="btn xl" href="https://yookassa.ru/my/i/araMM7p6LnUp/l" target="_blank" rel="noopener">Купить за 14&nbsp;900&nbsp;₽ <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span></a>
-      <small>Напиши мне в Telegram: коротко поговорим, подойдёт ли тебе группа</small>
+      <a class="btn xl" href="https://yookassa.ru/my/i/araMM7p6LnUp/l" target="_blank" rel="noopener">Купить за 14&nbsp;900&nbsp;₽ <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"></path></svg></span></a>
+      <small>После оплаты напиши мне в Telegram <a href="https://t.me/avtor_kariera_support" target="_blank" rel="noopener">@avtor_kariera_support</a>: пришлю условия участия и ссылку на калибровку</small>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- 13. ЮР-ПОДВАЛ (оферта на курс и согласие на запись - через yurist до публикации) -->
 <footer>
   <div class="wrap">
     <div class="g">
       <p>«Та сторона стола» · мини-группа по «Методу чужих глаз» · Вероника Малых · 15+ лет в подборе персонала</p>
-      <div class="links"><span class="ph">Оферта</span><span class="ph">Политика персональных данных</span><span class="ph">Реквизиты</span><a href="https://t.me/Kalibrov_ka_bot?start=site_footer">Бот калибровки</a><a href="https://t.me/+e8Ew6oEjnp4yOWMy">Telegram-канал</a></div>
+      <div class="links"><a href="kurs-legal.html#oferta">Оферта</a><a href="kurs-legal.html#pdn">Политика персональных данных</a><a href="kurs-legal.html#vozvrat">Отказ и возврат</a><a href="kurs-legal.html#zapis">Согласие на запись встреч</a><a href="kurs-legal.html#rekvizity">Реквизиты</a><a href="https://t.me/Kalibrov_ka_bot?start=site_footer">Бот калибровки</a><a href="https://t.me/+e8Ew6oEjnp4yOWMy">Telegram-канал</a></div>
     </div>
     <p class="legal">Малых Вероника Николаевна, самозанятая (НПД), ИНН 500300041562 · © 2026</p>
   </div>
@@ -757,5 +730,6 @@ footer .links a{display:inline-block;padding:11px 0}.brand{display:inline-block;
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
-</body>
-</html>
+
+
+</body></html>
