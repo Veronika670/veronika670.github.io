@@ -160,5 +160,6 @@ footer{border-top:1px solid rgba(245,244,239,.1)}
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.15});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 </script>
+<script src="/cookie-banner.js" defer></script>
 </body>
 </html>

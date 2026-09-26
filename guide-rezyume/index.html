@@ -66,5 +66,6 @@
     function update(){let n=checks.filter(x=>x.checked).length;checks.forEach(x=>x.closest('.check').classList.toggle('done',x.checked));score.textContent=n;if(!n){title.textContent='Отметь то, что уже видно';copy.textContent='Здесь появится итог проверки. Не старайся отметить всё - задача в том, чтобы увидеть слабое место до следующего отклика';return}title.textContent=results[n-1][0];copy.textContent=results[n-1][1]}
     checks.forEach(x=>x.addEventListener('change',update));
   </script>
+<script src="/cookie-banner.js" defer></script>
 </body>
 </html>
