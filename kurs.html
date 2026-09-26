@@ -301,6 +301,14 @@ p{text-wrap:pretty}
 .cta .lead{max-width:46ch}
 .cta-act{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
 .cta-act small{font-size:15px;color:var(--t-mute);max-width:42ch}
+.pay-consent{display:grid;grid-template-columns:18px 1fr;gap:10px;align-items:start;font-size:14px;line-height:1.45;opacity:.8;max-width:46ch;margin:18px 0 14px;cursor:pointer;transition:opacity .3s,color .3s}
+.pay-consent input{width:16px;height:16px;margin-top:3px;accent-color:var(--terra);cursor:pointer}
+.pay-consent a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.pay-consent.hint{opacity:1;color:var(--terra)}
+.btn[aria-disabled="true"]{opacity:.42;cursor:not-allowed;box-shadow:none;filter:saturate(.6)}
+.btn[aria-disabled="true"]:hover{background:var(--terra);box-shadow:none}
+.btn[aria-disabled="true"]:hover .ic{transform:none}
+.btn[aria-disabled="true"]:active{transform:none}
 
 /* ---------- подвал ---------- */
 footer{position:relative;background:var(--oled);color:var(--t-mute);padding:52px 0 64px;font-size:13px;line-height:1.7;box-shadow:inset 0 1px 0 var(--line-d)}
@@ -671,7 +679,8 @@ html{scroll-padding-top:96px}
           <li>Чат группы на время программы</li>
           <li>Мест: до 6</li>
         </ul>
-        <a class="btn" href="https://yookassa.ru/my/i/araMM7p6LnUp/l" target="_blank" rel="noopener">Купить за 14&nbsp;900&nbsp;₽ <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"></path></svg></span></a>
+        <label class="pay-consent"><input type="checkbox" class="js-pay-consent"><span>Согласен на обработку персональных данных, с <a href="/policy">политикой</a> ознакомлен</span></label>
+        <a class="btn js-pay-btn" aria-disabled="true" tabindex="-1" href="https://yookassa.ru/my/i/araMM7p6LnUp/l" target="_blank" rel="noopener">Купить за 14&nbsp;900&nbsp;₽ <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"></path></svg></span></a>
       </div></div>
       
     </div>
@@ -704,7 +713,8 @@ html{scroll-padding-top:96px}
       <p class="lead">Старт 20&nbsp;октября. Заявки принимаю до 16&nbsp;октября или пока есть места: в группе до 6&nbsp;человек, иначе на тренировке не хватит времени на каждого</p>
     </div>
     <div class="cta-act rv" style="--dl:.1s">
-      <a class="btn xl" href="https://yookassa.ru/my/i/araMM7p6LnUp/l" target="_blank" rel="noopener">Купить за 14&nbsp;900&nbsp;₽ <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"></path></svg></span></a>
+      <label class="pay-consent"><input type="checkbox" class="js-pay-consent"><span>Согласен на обработку персональных данных, с <a href="/policy">политикой</a> ознакомлен</span></label>
+      <a class="btn xl js-pay-btn" aria-disabled="true" tabindex="-1" href="https://yookassa.ru/my/i/araMM7p6LnUp/l" target="_blank" rel="noopener">Купить за 14&nbsp;900&nbsp;₽ <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"></path></svg></span></a>
       <small>После оплаты напиши мне в Telegram <a href="https://t.me/avtor_kariera_support" target="_blank" rel="noopener">@avtor_kariera_support</a>: пришлю условия участия и ссылку на калибровку</small>
     </div>
   </div>
@@ -722,6 +732,25 @@ html{scroll-padding-top:96px}
   </div>
 </footer>
 
+<script>
+(function(){
+  var boxes=[].slice.call(document.querySelectorAll('.js-pay-consent'));
+  var btns=[].slice.call(document.querySelectorAll('.js-pay-btn'));
+  if(!boxes.length||!btns.length)return;
+  function apply(on){
+    boxes.forEach(function(b){b.checked=on});
+    btns.forEach(function(a){if(on){a.removeAttribute('aria-disabled');a.removeAttribute('tabindex')}else{a.setAttribute('aria-disabled','true');a.setAttribute('tabindex','-1')}});
+  }
+  boxes.forEach(function(b){b.addEventListener('change',function(){apply(b.checked)})});
+  btns.forEach(function(a){a.addEventListener('click',function(e){
+    if(a.getAttribute('aria-disabled')!=='true')return;
+    e.preventDefault();
+    var lab=a.parentNode.querySelector('.pay-consent');
+    if(lab){lab.classList.add('hint');setTimeout(function(){lab.classList.remove('hint')},1400)}
+  })});
+  apply(false);
+})();
+</script>
 <script>
 (function(){
   var els=[].slice.call(document.querySelectorAll('.rv'));
