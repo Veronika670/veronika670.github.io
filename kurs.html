@@ -378,6 +378,13 @@ html{scroll-padding-top:96px}
 @media(max-width:900px){.rail.two-examples{max-width:100%;width:100%;margin-inline:0}.rail.two-examples .phone{--pw:264px}}
 /* 30.09: ссылка на разбор под «Посмотреть программу» */
 .hero-author .nav-link{display:block}.hero-author .nav-link+.nav-link{margin-top:6px}
+/* 30.09: почта для письма со входом (необязательно) */
+.pay-email{display:grid;gap:8px;margin:18px 0 0;max-width:46ch}
+.pay-email span{font-size:14px;line-height:1.45;opacity:.8;transition:opacity .3s,color .3s}
+.pay-email input{width:100%;min-height:52px;padding:0 16px;border:1px solid rgba(255,255,255,.18);border-radius:14px;background:rgba(255,255,255,.05);color:var(--t);font:500 16px/1 var(--f-body);outline:0}
+.pay-email input::placeholder{color:rgba(246,240,233,.45)}
+.pay-email input:focus{border-color:var(--terra);box-shadow:0 0 0 4px rgba(226,130,93,.2)}
+.pay-email.hint span{opacity:1;color:var(--terra)}.pay-email.hint input{border-color:var(--terra)}
 </style></head>
 <body>
 
@@ -682,7 +689,8 @@ html{scroll-padding-top:96px}
           <li>Чат группы на время программы</li>
           <li>Мест: до 6</li>
         </ul>
-        <label class="pay-consent"><input type="checkbox" class="js-pay-consent"><span>Согласен на обработку персональных данных, с <a href="/policy">политикой</a> ознакомлен</span></label>
+        <label class="pay-email"><span>Почта для письма со входом, на случай если Telegram не откроется. Можно пропустить</span><input type="email" class="js-pay-email" autocomplete="email" inputmode="email" placeholder="твоя почта"></label>
+<label class="pay-consent"><input type="checkbox" class="js-pay-consent"><span>Согласен на обработку персональных данных, с <a href="/policy">политикой</a> ознакомлен</span></label>
         <a class="btn js-pay-btn" aria-disabled="true" tabindex="-1" href="https://kariernay-kalibrovka.ru/api/course/pay" target="_blank" rel="noopener">Купить за 14&nbsp;900&nbsp;₽ <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"></path></svg></span></a>
         <p class="disc">Продукт не является медицинской или психотерапевтической услугой, не заменяет очную помощь специалиста, результат зависит от применения и не гарантируется</p>
       </div></div>
@@ -717,7 +725,8 @@ html{scroll-padding-top:96px}
       <p class="lead">Старт 20&nbsp;октября. Заявки принимаю до 16&nbsp;октября или пока есть места: в группе до 6&nbsp;человек, иначе на тренировке не хватит времени на каждого</p>
     </div>
     <div class="cta-act rv" style="--dl:.1s">
-      <label class="pay-consent"><input type="checkbox" class="js-pay-consent"><span>Согласен на обработку персональных данных, с <a href="/policy">политикой</a> ознакомлен</span></label>
+      <label class="pay-email"><span>Почта для письма со входом, на случай если Telegram не откроется. Можно пропустить</span><input type="email" class="js-pay-email" autocomplete="email" inputmode="email" placeholder="твоя почта"></label>
+<label class="pay-consent"><input type="checkbox" class="js-pay-consent"><span>Согласен на обработку персональных данных, с <a href="/policy">политикой</a> ознакомлен</span></label>
       <a class="btn xl js-pay-btn" aria-disabled="true" tabindex="-1" href="https://kariernay-kalibrovka.ru/api/course/pay" target="_blank" rel="noopener">Купить за 14&nbsp;900&nbsp;₽ <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"></path></svg></span></a>
       <small>После оплаты калибровка откроется сама: в боте или на сайте. Если что-то пошло не так, напиши мне в Telegram <a href="https://t.me/avtor_kariera_support" target="_blank" rel="noopener">@avtor_kariera_support</a></small>
     </div>
@@ -738,25 +747,6 @@ html{scroll-padding-top:96px}
 
 <script>
 (function(){
-  var boxes=[].slice.call(document.querySelectorAll('.js-pay-consent'));
-  var btns=[].slice.call(document.querySelectorAll('.js-pay-btn'));
-  if(!boxes.length||!btns.length)return;
-  function apply(on){
-    boxes.forEach(function(b){b.checked=on});
-    btns.forEach(function(a){if(on){a.removeAttribute('aria-disabled');a.removeAttribute('tabindex')}else{a.setAttribute('aria-disabled','true');a.setAttribute('tabindex','-1')}});
-  }
-  boxes.forEach(function(b){b.addEventListener('change',function(){apply(b.checked)})});
-  btns.forEach(function(a){a.addEventListener('click',function(e){
-    if(a.getAttribute('aria-disabled')!=='true')return;
-    e.preventDefault();
-    var lab=a.parentNode.querySelector('.pay-consent');
-    if(lab){lab.classList.add('hint');setTimeout(function(){lab.classList.remove('hint')},1400)}
-  })});
-  apply(false);
-})();
-</script>
-<script>
-(function(){
   var els=[].slice.call(document.querySelectorAll('.rv'));
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
   var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -5% 0px'});
@@ -765,5 +755,6 @@ html{scroll-padding-top:96px}
 </script>
 
 
+<script src="/pay-consent.js?v=2" defer></script>
 <script src="/cookie-banner.js" defer></script>
 </body></html>
