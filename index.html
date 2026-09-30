@@ -148,6 +148,23 @@ h2{font-family:"Unbounded","Golos Text",sans-serif;font-weight:500;font-size:cla
 .difference-item:nth-child(2) .difference-num{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--terracotta);color:var(--ink)}
 .difference-item:nth-child(2) h3{color:var(--terracotta-d)}
 @media(prefers-reduced-motion:reduce){.zone-shell:nth-child(2){transform:none}}
+/* 30.09: мост к программе и ссылка в меню */
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-link-ghost{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 1px rgba(242,238,229,.22)}
+.nav-link-ghost:hover{background:var(--terracotta);color:var(--ink)}
+.program-bridge{padding:120px 0;background:var(--ink-2);color:var(--paper);border-top:1px solid rgba(242,238,229,.08)}
+.program-bridge h2{max-width:680px;margin-top:24px}
+.program-bridge-lead{max-width:600px;margin:30px 0 0;color:rgba(242,238,229,.72);font-size:17px;line-height:1.62}
+.program-bridge-meta{max-width:600px;margin:18px 0 0;color:rgba(242,238,229,.5);font-size:14px;line-height:1.6}
+.program-bridge .actions{margin-top:36px}
+.program-bridge .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.program-bridge-card{border-radius:26px;padding:8px 26px;background:rgba(242,238,229,.05);box-shadow:inset 0 0 0 1px rgba(242,238,229,.1)}
+.program-bridge-row{display:grid;grid-template-columns:92px 1fr;gap:16px;padding:17px 0;border-top:1px solid rgba(242,238,229,.08);font-size:15px;line-height:1.4}
+.program-bridge-row:first-child{border-top:0}
+.program-bridge-row span{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--terracotta);padding-top:4px}
+.program-bridge-row b{font-weight:600;color:var(--paper)}
+@media(max-width:900px){.program-bridge .wrap{grid-template-columns:1fr;gap:40px}}
+@media(max-width:640px){.nav-link-ghost{display:none}.program-bridge{padding:84px 0}.program-bridge-row{grid-template-columns:80px 1fr;font-size:14px}}
 </style>
 </head>
 <body>
@@ -157,7 +174,10 @@ h2{font-family:"Unbounded","Golos Text",sans-serif;font-weight:500;font-size:cla
 <header class="hero">
   <nav class="nav" aria-label="Основная навигация">
     <span class="brand">Карьерная калибровка</span>
-    <a class="nav-link" href="https://t.me/Kalibrov_ka_bot?start=site_nav">Начать диалог</a>
+    <div class="nav-links">
+      <a class="nav-link nav-link-ghost" href="/programma.html">Мини-группа</a>
+      <a class="nav-link" href="https://t.me/Kalibrov_ka_bot?start=site_nav">Начать диалог</a>
+    </div>
   </nav>
   <div class="wrap hero-grid" id="content">
     <div class="hero-copy reveal">
@@ -298,6 +318,29 @@ h2{font-family:"Unbounded","Golos Text",sans-serif;font-weight:500;font-size:cla
   </section>
 
   <!-- 04.09: публичный путь Unisender (raw POST/hash и embed-виджет) упирается в капчу DDoS-Guard - форма ниже шлёт email на свой /api/subscribe (Timeweb), он вызывает Unisender API напрямую -->
+  <!-- 30.09: дорога к программе «Та сторона стола»: калибровка → разбор (КЭВ) → страница программы и оплата -->
+  <section class="program-bridge" aria-labelledby="program-bridge-title">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">Дальше одного диалога</span>
+        <h2 class="display" id="program-bridge-title">Мини-группа «Та сторона стола»</h2>
+        <p class="program-bridge-lead">Калибровка показывает место, где вас слышат не так, как вы хотели. В мини-группе это место тренируется вживую: 4 встречи по 60 минут, до 6 человек, я в роли нанимающей, две записи вашего собеседования до и после. Калибровка входит в программу</p>
+        <p class="program-bridge-meta">Старт 20 октября · встречи по вторникам, 19:00 МСК · заявки до 16 октября · 14 900 ₽ за место, первый поток</p>
+        <div class="actions">
+          <a class="button button-primary" href="/programma.html">Почему это работает: разбор <i>→</i></a>
+          <a class="button button-secondary" href="/kurs.html">Программа и оплата <i>→</i></a>
+        </div>
+      </div>
+      <div class="program-bridge-card reveal" aria-label="Четыре недели программы">
+        <div class="program-bridge-row"><span>Старт</span><b>Калибровка до первой встречи</b></div>
+        <div class="program-bridge-row"><span>Неделя 1</span><b>Рассказ о себе</b></div>
+        <div class="program-bridge-row"><span>Неделя 2</span><b>Неудобные вопросы</b></div>
+        <div class="program-bridge-row"><span>Неделя 3</span><b>Цифра</b></div>
+        <div class="program-bridge-row"><span>Неделя 4</span><b>Полное собеседование</b></div>
+      </div>
+    </div>
+  </section>
+
   <section class="test-drive test-drive-final" aria-labelledby="test-drive-final-title">
     <div class="wrap test-drive-shell">
       <div class="test-drive-copy reveal"><span class="eyebrow">Можно начать бесплатно</span><h2 class="display" id="test-drive-final-title">Не готовы к калибровке сейчас?</h2><p>Заберите разбор «Перевод с рекрутёрского» и вопросы для самопроверки - письмами на email, без оплаты</p></div>
@@ -317,7 +360,7 @@ h2{font-family:"Unbounded","Golos Text",sans-serif;font-weight:500;font-size:cla
   </section>
 </main>
 
-<footer><div class="wrap"><div class="footer-grid"><p>Метод «Карьерная калибровка» · Вероника Малых · 15+ лет в подборе персонала</p><div class="footer-links"><a href="https://t.me/Kalibrov_ka_bot?start=site_footer">Telegram-бот</a><a href="https://t.me/+e8Ew6oEjnp4yOWMy">Telegram-канал</a><a href="legal.html#offerta">Оферта</a><a href="legal.html#vozvrat">Возврат</a><a href="/policy">Политика персональных данных</a></div></div><p class="legal">Малых Вероника Николаевна, самозанятая (НПД), ИНН 500300041562 · © 2026</p></div></footer>
+<footer><div class="wrap"><div class="footer-grid"><p>Метод «Карьерная калибровка» · Вероника Малых · 15+ лет в подборе персонала</p><div class="footer-links"><a href="https://t.me/Kalibrov_ka_bot?start=site_footer">Telegram-бот</a><a href="https://t.me/+e8Ew6oEjnp4yOWMy">Telegram-канал</a><a href="/kurs.html">Мини-группа «Та сторона стола»</a><a href="legal.html#offerta">Оферта</a><a href="legal.html#vozvrat">Возврат</a><a href="/policy">Политика персональных данных</a></div></div><p class="legal">Малых Вероника Николаевна, самозанятая (НПД), ИНН 500300041562 · © 2026</p></div></footer>
 
 <script>
 (function(){
